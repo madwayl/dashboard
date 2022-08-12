@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+
     <title>Admin Dashboard</title>
 </head>
 
@@ -17,196 +19,224 @@
     profile pic + status + name -->
 
     <header>
-        <div class="title">
-            <h2>Morning, John!</h2>
-            <h4>Dashboard</h4>
-        </div>
-        <input type="search" name="search" id="search">
-        <div class='notification'><img src="" alt=""></div>
+        <section class="top">
+            <input type="search" name="search" id="search">
+            <div class='notification'><img src="" alt=""></div>
 
-        <div class='profile img'>
-            <img src="" alt="">
-        </div>
-
-        <div class='profile section' style='display: none'>
-            <div class="status">
-                <input type="radio" name="status" id="online" checked>
-                <input type="radio" name="status" id="busy">
-                <input type="radio" name="status" id="offline">
+            <div class='profile'>
+                <img src="./assets/web/profile" alt="profile">
+                <p>John</p>
             </div>
-            <div class="profile s">
-                <input type="radio" name="profiles" id="john" checked>
-                <input type="radio" name="profiles" id="margaret">
-                <input type="radio" name="profiles" id="alex">
-            </div>
-            <div class="profile settings"> Profile Settings </div>
-        </div>
 
+            <div class='profile section' style='display: none'>
+                <div class="status">
+                    <input type="radio" name="status" id="online" checked>
+                    <input type="radio" name="status" id="busy">
+                    <input type="radio" name="status" id="offline">
+                </div>
+                <div class="profile s">
+                    <input type="radio" name="profiles" id="john" checked>
+                    <input type="radio" name="profiles" id="margaret">
+                    <input type="radio" name="profiles" id="alex">
+                </div>
+                <div class="profile settings"> Profile Settings </div>
+            </div>
+        </section>
+
+        <section class="bottom">
+            <div class="title">
+                <h2>Morning, John!</h2>
+                <h4>Dashboard</h4>
+            </div>
+            <div class="header icons">
+                <button class="icon-label">
+                    <img src="" alt="share" id="share" class="icon">
+                </button>
+                <button class="icon-label">
+                    <img src="" alt="print" id="print" class="icon">
+                </button>
+                <button class="icon-label">
+                    <img src="" alt="download" id="download" class="icon">
+                </button>
+            </div>
+        </section>
     </header>
 
     <!-- !SECTION -->
 
     <!-- SECTION Navigation -->
 
-    <!-- Navigation Upper
-    Dasboard Logo
-    Overview
-    History
-    Chat
-    Documents -->
-
-    <!-- Navigation Lower
-    Settings
-    Log Out -->
-
     <nav>
-        <section class="logo">
-            <img src="" alt="Logo" class="logo">
-            Brand Name
-        </section>
+        <div class="nav">
 
-        <section class="top">
-            <ul>
-                <li class="overview">
-                    <img src="" alt="Overview" class="icon overview">
-                    Overview
-                </li>
-                <li class="History">
-                    <img src="" alt="History" class="icon history">
-                    History
-                </li>
-                <li class="chat">
-                    <img src="" alt="Chat" class="icon chat">
-                    Chat
-                </li>
-                <li class="documents">
-                    <img src="" alt="Documents" class="icon documents">
-                    Documents
-                </li>
-            </ul>
-        </section>
+            <!-- Navigation Upper
+        Dasboard Logo
+        Overview
+        History
+        Chat
+        Documents -->
 
-        <section class="bottom">
-            <ul>
-                <li class="settings">
-                    <img src="" alt="Settings" class="icon settings">
-                    Settings
-                </li>
-                <li class="logout">
-                    <img src="" alt="Log Out" class="icon logout">
-                    Log Out
-                </li>
-            </ul>
-        </section>
+            <section class="nav struct logo">
+                <img src="" alt="Logo" class="logo">
+                <p class="logo text">Brand Name</p>
+            </section>
+
+            <section class="nav top">
+                <ul>
+                    <li class="nav struct overview">
+                        <img src="" alt="Overview" class="icon overview">
+                        <p class="overview text">Overview</p>
+                    </li>
+                    <li class="nav struct history">
+                        <img src="" alt="History" class="icon history">
+                        <p class="history text">History</p>
+                    </li>
+                    <li class="nav struct chat">
+                        <img src="" alt="Chat" class="icon chat">
+                        <p class="chat text">Chat</p>
+                    </li>
+                    <li class="nav struct documents">
+                        <img src="" alt="Documents" class="icon documents">
+                        <p class="document text">Documents</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Navigation Lower
+        Settings
+        Log Out -->
+
+            <section class="nav bottom">
+                <ul>
+                    <li class="nav struct settings">
+                        <img src="" alt="Settings" class="icon settings">
+                        <p class="nav text">Settings</p>
+                    </li>
+                    <li class="nav struct help">
+                        <img src="" alt="Help Desk" class="icon help">
+                        <p class=" help text">Help Desk</p>
+                    </li>
+                    <li class="nav struct logout">
+                        <img src="" alt="Log Out" class="icon logout">
+                        <p class="logout text">Log Out</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
     </nav>
 
     <!-- !SECTION -->
 
     <!-- SECTION Main -->
 
-    <!-- Article 1: Alert Count
-    Alerts Not Responded
-        Warnings
-            Numbers + Image
-        Errors
-            Numbers + Image
-        Criticals
-            Numbers + Image -->
+    <main class="body">
 
-    <!-- Article 2: 
-    Div A : Graph 
-    Div B : Tickets Assgined -->
+        <!-- Article 1: Alert Count
+        Alerts Not Responded
+            Warnings
+                Numbers + Image
+            Errors
+                Numbers + Image
+            Criticals
+                Numbers + Image -->
 
-    <!-- SECTION Alert -->
+        <!-- SECTION Alert -->
 
-    <main class="alert">
-        <div class="alert count">
-            <h3>123</h3>
-            <h4>Alerts Not Responded</h4>
-        </div>
-        <div class="alert warning">
-            <h3>123</h3>
-            <h4>Warnings</h4>
-        </div>
-        <div class="alert errors">
-            <h3>123</h3>
-            <h4>Errors</h4>
-        </div>
-        <div class="alert critical">
-            <h3>123</h3>
-            <h4>Critical</h4>
-        </div>
+        <section class="alert">
+            <div class="alert count">
+                <p class="alert count number">123</p>
+                <p class="alert count text">Alerts Not Responded</p>
+            </div>
+            <div class="alert in warning">
+                <p class="alert warning number">123</p>
+                <p class="alert warning text">Warnings</p>
+            </div>
+            <div class="alert in errors">
+                <p class="alert error number">123</p>
+                <p class="alert error text">Errors</p>
+            </div>
+            <div class="alert in critical">
+                <p class="alert critical number">123</p>
+                <p class="alert critical text">Critical</p>
+            </div>
+        </section>
+
+        <!-- !SECTION -->
+
+        <!-- Article 2: 
+            Div A : Graph 
+            Div B : Tickets Assgined -->
+
+        <!-- SECTION Graph -->
+
+        <section class="graph">
+            <div class="bars" id="bar1">
+                <div class="bar warning" id="w1"></div>
+                <div class="bar error" id="e1"></div>
+                <div class="bar critical" id="c1"></div>
+            </div>
+            <div class="bars" id="bar2">
+                <div class="bar warning" id="w2"></div>
+                <div class="bar error" id="e2"></div>
+                <div class="bar critical" id="c2"></div>
+            </div>
+            <div class="bars" id="bar3">
+                <div class="bar warning" id="w3"></div>
+                <div class="bar error" id="e3"></div>
+                <div class="bar critical" id="c3"></div>
+            </div>
+            <div class="bars" id="bar4">
+                <div class="bar warning" id="w4"></div>
+                <div class="bar error" id="e4"></div>
+                <div class="bar critical" id="c4"></div>
+            </div>
+            <div class="bars" id="bar5">
+                <div class="bar warning" id="w5"></div>
+                <div class="bar error" id="e5"></div>
+                <div class="bar critical" id="c5"></div>
+            </div>
+            <div class="bars" id="bar6">
+                <div class="bar warning" id="w6"></div>
+                <div class="bar error" id="e6"></div>
+                <div class="bar critical" id="c6"></div>
+            </div>
+        </section>
+
+        <!-- !SECTION -->
+
+        <!-- SECTION Recent Alerts -->
+
+        <section class="recents">
+            <h3>Recent Alerts</h3>
+            <section class="recents body">
+                <div class="recent">
+                    <input type="checkbox" name="recents" id="alert1" class="recent check">
+                    <label for="alert1" class="recent text">Upgrade Successfully Completed</label>
+                </div>
+                <div class="recent">
+                    <input type="checkbox" name="recents" id="warning1" class="recent check">
+                    <label for="warning1" class="recent text">Unkown User Login</label>
+                </div>
+                <div class="recent">
+                    <input type="checkbox" name="recents" id="warning2" class="recent check">
+                    <label for="warning2" class="recent text">Performance Issues Encountered</label>
+                </div>
+                <div class="recent">
+                    <input type="checkbox" name="recents" id="error1" class="recent check">
+                    <label for="error1" class="recent text">Compatibility Issues</label>
+                </div>
+                <div class="recent">
+                    <input type="checkbox" name="recents" id="alert2" class="recent check">
+                    <label for="alert2" class="recent text">New Account Created Successfully</label>
+                </div>
+                <div class="recent">
+                    <input type="checkbox" name="recents" id="alert3" class="recent check">
+                    <label for="alert3" class="recent text">Upgrade Insider Packages on Progress</label>
+                </div>
+            </section>
+        </section>
+
     </main>
-
-    <!-- !SECTION -->
-
-    <!-- SECTION Graph -->
-
-    <div class="graph">
-        <div class="bars" id="bar1">
-            <div class="bar warning" id="w1"></div>
-            <div class="bar error" id="e1"></div>
-            <div class="bar critical" id="c1"></div>
-        </div>
-        <div class="bars" id="bar2">
-            <div class="bar warning" id="w2"></div>
-            <div class="bar error" id="e2"></div>
-            <div class="bar critical" id="c2"></div>
-        </div>
-        <div class="bars" id="bar3">
-            <div class="bar warning" id="w3"></div>
-            <div class="bar error" id="e3"></div>
-            <div class="bar critical" id="c3"></div>
-        </div>
-        <div class="bars" id="bar4">
-            <div class="bar warning" id="w4"></div>
-            <div class="bar error" id="e4"></div>
-            <div class="bar critical" id="c4"></div>
-        </div>
-        <div class="bars" id="bar5">
-            <div class="bar warning" id="w5"></div>
-            <div class="bar error" id="e5"></div>
-            <div class="bar critical" id="c5"></div>
-        </div>
-        <div class="bars" id="bar6">
-            <div class="bar warning" id="w6"></div>
-            <div class="bar error" id="e6"></div>
-            <div class="bar critical" id="c6"></div>
-        </div>
-    </div>
-
-    <!-- !SECTION -->
-
-    <!-- SECTION Recent Alerts -->
-
-    <div class="recents">
-        <h3>Recent Alerts</h3>
-        <div class="recent">
-            <input type="checkbox" name="recents" id="alert1" class="recent check">
-            <label for="alert1">Upgrade Successfully Completed</label>
-        </div>
-        <div class="recent">
-            <input type="checkbox" name="recents" id="warning1" class="recent check">
-            <label for="warning1">Unkown User Login</label>
-        </div>
-        <div class="recent">
-            <input type="checkbox" name="recents" id="warning2" class="recent check">
-            <label for="warning2">Performance Issues Encountered</label>
-        </div>
-        <div class="recent">
-            <input type="checkbox" name="recents" id="error1" class="recent check">
-            <label for="error1">Compatibility Issues</label>
-        </div>
-        <div class="recent">
-            <input type="checkbox" name="recents" id="alert2" class="recent check">
-            <label for="alert2">New Account Created Successfully</label>
-        </div>
-        <div class="recent">
-            <input type="checkbox" name="recents" id="alert3" class="recent check">
-            <label for="alert3">Upgrade Insider Packages on Progress</label>
-        </div>
-
-    </div>
 
     <!-- !SECTION -->
 

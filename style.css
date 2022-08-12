@@ -1,0 +1,233 @@
+* {
+    outline: 1px solid red
+}
+
+:root {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: .3fr 2fr 2fr;
+    grid-template-areas:
+        "nav header header"
+        "nav main main"
+        "nav main main"
+        "nav main main"
+        "nav footer footer";
+}
+
+/* SECTION Header */
+
+header {
+    grid-area: header;
+}
+
+header section.top {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr) 1fr 1fr max-content 1fr;
+    grid-template-areas:
+        "search search . . notification profile";
+    gap: 1rem
+}
+
+#search {
+    height: 2rem;
+    margin: 1rem;
+
+    grid-area: search;
+    align-self: center;
+
+    border-radius: 50px;
+}
+
+.notification {
+    grid-area: notification
+}
+
+.profile {
+    grid-area: profile;
+    display: flex;
+
+    align-items: stretch;
+}
+
+header section.bottom {
+    display: flex;
+    justify-content: space-around;
+    gap: 10rem;
+}
+
+.title>h2,
+.title>h4 {
+    margin: 0.5rem;
+}
+
+.header.icons {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+button.icon-label {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+/* SECTION Navigation */
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav {
+    grid-area: nav;
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all .5s ease;
+}
+
+nav:hover {
+    overflow: visible;
+}
+
+div.nav {
+    height: 100%;
+    width: max-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    overflow: hidden;
+
+    position: absolute;
+}
+
+.nav.struct {
+    display: grid;
+    grid-template-columns: 1fr 1fr .1fr;
+}
+
+.struct.logo {
+    margin-top: 0.5rem;
+}
+
+.struct.logout {
+    margin-bottom: 0.5rem;
+}
+
+.nav>img {
+    margin: 1em;
+    width: 35%;
+}
+
+.nav>.text {
+    margin-left: -3rem;
+    align-self: center;
+}
+
+.nav.top,
+.nav.bottom {
+    margin-top: auto;
+}
+
+/* SECTION Main */
+
+main.body {
+    margin: 0.5rem;
+    grid-area: main;
+
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / repeat(3, 1fr);
+    grid-template-areas:
+        "alert alert alert"
+        "graph graph recents"
+        "graph graph recents"
+        "graph graph recents";
+    gap: 1.5rem;
+
+    overflow-y: auto;
+}
+
+section.alert {
+    margin: .5rem;
+    grid-area: alert;
+
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.alert.number {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.alert.text {
+    margin: 0;
+}
+
+.alert.in {
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+}
+
+section.graph {
+    grid-area: graph;
+}
+
+section.recents {
+    grid-area: recents;
+}
+
+.recents {
+    overflow-y: auto;
+}
+
+.recents>h3 {
+    margin: 0;
+    padding: .8rem;
+
+    position: sticky;
+    top: 0;
+}
+
+div.recent {
+    display: flex;
+}
+
+.recent.check {
+    margin: .8rem;
+    align-items: center;
+}
+
+.recent.text {
+    margin: .2rem;
+    align-items: center;
+}
+
+/* SECTION Footer */
+
+footer {
+    /* height: 1.5rem; */
+    width: 100%;
+    margin: auto;
+
+    grid-area: footer;
+    justify-self: center;
+
+    font-size: .75rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
