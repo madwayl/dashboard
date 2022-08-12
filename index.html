@@ -8,6 +8,8 @@
 
 <body>
 
+    <!-- SECTION Header -->
+
     <!-- Header
     title Morning, name!
     search
@@ -21,8 +23,12 @@
         </div>
         <input type="search" name="search" id="search">
         <div class='notification'><img src="" alt=""></div>
-        <div class='profile img'><img src="" alt=""></div>
-        <div class='profile section' style='display: hidden'>
+
+        <div class='profile img'>
+            <img src="" alt="">
+        </div>
+
+        <div class='profile section' style='display: none'>
             <div class="status">
                 <input type="radio" name="status" id="online" checked>
                 <input type="radio" name="status" id="busy">
@@ -35,7 +41,12 @@
             </div>
             <div class="profile settings"> Profile Settings </div>
         </div>
+
     </header>
+
+    <!-- !SECTION -->
+
+    <!-- SECTION Navigation -->
 
     <!-- Navigation Upper
     Dasboard Logo
@@ -47,6 +58,51 @@
     <!-- Navigation Lower
     Settings
     Log Out -->
+
+    <nav>
+        <section class="logo">
+            <img src="" alt="Logo" class="logo">
+            Brand Name
+        </section>
+
+        <section class="top">
+            <ul>
+                <li class="overview">
+                    <img src="" alt="Overview" class="icon overview">
+                    Overview
+                </li>
+                <li class="History">
+                    <img src="" alt="History" class="icon history">
+                    History
+                </li>
+                <li class="chat">
+                    <img src="" alt="Chat" class="icon chat">
+                    Chat
+                </li>
+                <li class="documents">
+                    <img src="" alt="Documents" class="icon documents">
+                    Documents
+                </li>
+            </ul>
+        </section>
+
+        <section class="bottom">
+            <ul>
+                <li class="settings">
+                    <img src="" alt="Settings" class="icon settings">
+                    Settings
+                </li>
+                <li class="logout">
+                    <img src="" alt="Log Out" class="icon logout">
+                    Log Out
+                </li>
+            </ul>
+        </section>
+    </nav>
+
+    <!-- !SECTION -->
+
+    <!-- SECTION Main -->
 
     <!-- Article 1: Alert Count
     Alerts Not Responded
@@ -60,6 +116,111 @@
     <!-- Article 2: 
     Div A : Graph 
     Div B : Tickets Assgined -->
+
+    <!-- SECTION Alert -->
+
+    <main class="alert">
+        <div class="alert count">
+            <h3>123</h3>
+            <h4>Alerts Not Responded</h4>
+        </div>
+        <div class="alert warning">
+            <h3>123</h3>
+            <h4>Warnings</h4>
+        </div>
+        <div class="alert errors">
+            <h3>123</h3>
+            <h4>Errors</h4>
+        </div>
+        <div class="alert critical">
+            <h3>123</h3>
+            <h4>Critical</h4>
+        </div>
+    </main>
+
+    <!-- !SECTION -->
+
+    <!-- SECTION Graph -->
+
+    <div class="graph">
+        <div class="bars" id="bar1">
+            <div class="bar warning" id="w1"></div>
+            <div class="bar error" id="e1"></div>
+            <div class="bar critical" id="c1"></div>
+        </div>
+        <div class="bars" id="bar2">
+            <div class="bar warning" id="w2"></div>
+            <div class="bar error" id="e2"></div>
+            <div class="bar critical" id="c2"></div>
+        </div>
+        <div class="bars" id="bar3">
+            <div class="bar warning" id="w3"></div>
+            <div class="bar error" id="e3"></div>
+            <div class="bar critical" id="c3"></div>
+        </div>
+        <div class="bars" id="bar4">
+            <div class="bar warning" id="w4"></div>
+            <div class="bar error" id="e4"></div>
+            <div class="bar critical" id="c4"></div>
+        </div>
+        <div class="bars" id="bar5">
+            <div class="bar warning" id="w5"></div>
+            <div class="bar error" id="e5"></div>
+            <div class="bar critical" id="c5"></div>
+        </div>
+        <div class="bars" id="bar6">
+            <div class="bar warning" id="w6"></div>
+            <div class="bar error" id="e6"></div>
+            <div class="bar critical" id="c6"></div>
+        </div>
+    </div>
+
+    <!-- !SECTION -->
+
+    <!-- SECTION Recent Alerts -->
+
+    <div class="recents">
+        <h3>Recent Alerts</h3>
+        <div class="recent">
+            <input type="checkbox" name="recents" id="alert1" class="recent check">
+            <label for="alert1">Upgrade Successfully Completed</label>
+        </div>
+        <div class="recent">
+            <input type="checkbox" name="recents" id="warning1" class="recent check">
+            <label for="warning1">Unkown User Login</label>
+        </div>
+        <div class="recent">
+            <input type="checkbox" name="recents" id="warning2" class="recent check">
+            <label for="warning2">Performance Issues Encountered</label>
+        </div>
+        <div class="recent">
+            <input type="checkbox" name="recents" id="error1" class="recent check">
+            <label for="error1">Compatibility Issues</label>
+        </div>
+        <div class="recent">
+            <input type="checkbox" name="recents" id="alert2" class="recent check">
+            <label for="alert2">New Account Created Successfully</label>
+        </div>
+        <div class="recent">
+            <input type="checkbox" name="recents" id="alert3" class="recent check">
+            <label for="alert3">Upgrade Insider Packages on Progress</label>
+        </div>
+
+    </div>
+
+    <!-- !SECTION -->
+
+    <!-- !SECTION -->
+
+    <!-- SECTION Footer -->
+    <footer>
+        <div>
+            <p>
+                mlksathil <a href=""><img src="" alt="github"></a> 2022
+            </p>
+        </div>
+    </footer>
+
 
 </body>
 
