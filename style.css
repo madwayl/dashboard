@@ -11,7 +11,8 @@ body {
     height: 100vh;
 
     display: grid;
-    grid-template-columns: .3fr 2fr 2fr;
+    grid-template-columns: minmax(80px, 6vw) 2fr 2fr;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas:
         "nav header header"
         "nav main main"
@@ -28,7 +29,7 @@ header {
 
 header section.top {
     display: grid;
-    grid-template-columns: repeat(2, 2fr) 1fr 1fr max-content 1fr;
+    grid-template-columns: repeat(2, 2fr) 1fr 1fr 1fr 1fr;
     grid-template-areas:
         "search search . . notification profile";
     gap: 1rem
@@ -56,9 +57,11 @@ header section.top {
 }
 
 header section.bottom {
+    margin: 0 1rem;
+
     display: flex;
-    justify-content: space-around;
-    gap: 10rem;
+    justify-content: space-between;
+    gap: clamp(50px, 5rem, 500px)
 }
 
 .title>h2,
@@ -87,6 +90,7 @@ ul {
 }
 
 nav {
+    min-width: max-content;
     grid-area: nav;
     position: relative;
 
@@ -101,7 +105,7 @@ nav:hover {
 
 div.nav {
     height: 100%;
-    width: max-content;
+    min-width: max-content;
 
     display: flex;
     flex-flow: column nowrap;
@@ -113,7 +117,11 @@ div.nav {
 
 .nav.struct {
     display: grid;
-    grid-template-columns: 1fr 1fr .1fr;
+    grid-template-columns: minmax(80px, 6vw) 1fr .1fr;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    gap: 1em;
 }
 
 .struct.logo {
@@ -126,12 +134,12 @@ div.nav {
 
 .nav>img {
     margin: 1em;
-    width: 35%;
+    width: max(40px, 3.5vw);
 }
 
 .nav>.text {
-    margin-left: -3rem;
-    align-self: center;
+    /* margin-left: 3rem; */
+    justify-self: start;
 }
 
 .nav.top,
@@ -146,9 +154,8 @@ main.body {
     grid-area: main;
 
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr / repeat(3, 1fr);
-    grid-template-areas:
-        "alert alert alert"
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    grid-template-areas: "alert alert alert"
         "graph graph recents"
         "graph graph recents"
         "graph graph recents";
