@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Admin Dashboard</title>
 </head>
@@ -21,14 +22,22 @@
     <header>
         <section class="top">
             <input type="search" name="search" id="search">
-            <div class='notification'><img src="" alt=""></div>
-
-            <div class='profile'>
-                <img src="./assets/web/profile" alt="profile">
-                <p>John</p>
+            <div class='notification'>
+                <img src="assets/web/icon-other/bell-solid.svg" alt="" class="notification icon">
             </div>
 
-            <div class='profile section' style='display: none'>
+            <div class='notification selection' style='display: none'>
+                <div class="notification message">
+                    <p class="notification message text">Just Kidding! Nothing here. </p>
+                </div>
+            </div>
+
+            <div class='profile'>
+                <img src="./assets/web/profile/gray-profile.png" alt="profile" class="profile image">
+                <p class="profile name">John Doe</p>
+            </div>
+
+            <div class='profile selection' style='display: none'>
                 <div class="status">
                     <input type="radio" name="status" id="online" checked>
                     <input type="radio" name="status" id="busy">
@@ -45,18 +54,22 @@
 
         <section class="bottom">
             <div class="title">
-                <h2>Morning, John!</h2>
-                <h4>Dashboard</h4>
+                <img src="./assets/web/profile/gray-profile.png" alt="profile" class="profile main image">
+                <div class="greeting">
+                    <h1>Morning, John!</h1>
+                    <h4>Today's Dashboard</h4>
+                </div>
             </div>
             <div class="header icons">
-                <button class="icon-label">
-                    <img src="" alt="share" id="share" class="icon">
+                <button class="icon">
+                    <img src="assets/web/icon-other/share-nodes-solid.svg" alt="share" id="share" class="header icon">
                 </button>
-                <button class="icon-label">
-                    <img src="" alt="print" id="print" class="icon">
+                <button class="icon">
+                    <img src="assets/web/icon-other/print-solid.svg" alt="print" id="print" class="header icon">
                 </button>
-                <button class="icon-label">
-                    <img src="" alt="download" id="download" class="icon">
+                <button class="icon">
+                    <img src="assets/web/icon-other/download-solid.svg" alt="download" id="download"
+                        class="header icon">
                 </button>
             </div>
         </section>
@@ -77,26 +90,26 @@
         Documents -->
 
             <section class="nav struct logo">
-                <img src="" alt="Logo" class="logo">
+                <img src="assets/web/icon-nav/hashtag-solid.svg" alt="Logo" class="icon logo">
                 <p class="logo text">Brand Name</p>
             </section>
 
             <section class="nav top">
                 <ul>
                     <li class="nav struct overview">
-                        <img src="" alt="Overview" class="icon overview">
+                        <img src="assets/web/icon-nav/border-all-solid.svg" alt="Overview" class="icon overview">
                         <p class="overview text">Overview</p>
                     </li>
                     <li class="nav struct history">
-                        <img src="" alt="History" class="icon history">
+                        <img src="assets/web/icon-nav/clock-rotate-left-solid.svg" alt="History" class="icon history">
                         <p class="history text">History</p>
                     </li>
                     <li class="nav struct chat">
-                        <img src="" alt="Chat" class="icon chat">
+                        <img src="assets/web/icon-nav/message-solid.svg" alt="Chat" class="icon chat">
                         <p class="chat text">Chat</p>
                     </li>
                     <li class="nav struct documents">
-                        <img src="" alt="Documents" class="icon documents">
+                        <img src="assets/web/icon-nav/file-solid.svg" alt="Documents" class="icon documents">
                         <p class="document text">Documents</p>
                     </li>
                 </ul>
@@ -109,15 +122,16 @@
             <section class="nav bottom">
                 <ul>
                     <li class="nav struct settings">
-                        <img src="" alt="Settings" class="icon settings">
+                        <img src="assets/web/icon-nav/gear-solid.svg" alt="Settings" class="icon settings">
                         <p class="nav text">Settings</p>
                     </li>
                     <li class="nav struct help">
-                        <img src="" alt="Help Desk" class="icon help">
+                        <img src="assets/web/icon-nav/circle-question-solid.svg" alt="Help Desk" class="icon help">
                         <p class=" help text">Help Desk</p>
                     </li>
                     <li class="nav struct logout">
-                        <img src="" alt="Log Out" class="icon logout">
+                        <img src="assets/web/icon-nav/arrow-right-from-bracket-solid.svg" alt="Log Out"
+                            class="icon logout">
                         <p class="logout text">Log Out</p>
                     </li>
                 </ul>
@@ -144,28 +158,31 @@
 
         <section class="alert">
             <div class="alert overview count">
-                <img src="" alt="Alert Logo" class="alert count logo">
+                <img src="assets/web/icon-alerts/exclamation-solid.svg" alt="Alert Logo" class="alert count icon">
                 <p class="alert count number">123</p>
                 <p class="alert count text">Alerts Not Responded</p>
-                <img src="" alt="" class="alert count graph">
+                <img src="assets/web/icon-other/arrow-down-solid.svg" alt="" class="alert count arrow icon">
             </div>
             <div class="alert overview in warning">
-                <img src="" alt="Warning Logo" class="alert warning logo">
-                <p class="alert warning number">123</p>
+                <img src="assets/web/icon-alerts/triangle-exclamation-solid.svg" alt="Warning Logo"
+                    class="alert warning icon">
+                <p class="alert warning number">50</p>
                 <p class="alert warning text">Warnings</p>
-                <img src="" alt="" class="alert warning graph">
+                <img src="assets/web/icon-other/arrow-up-solid.svg" alt="" class="alert warning arrow icon">
             </div>
             <div class="alert overview in error">
-                <img src="" alt="error Logo" class="alert error logo">
-                <p class="alert error number">123</p>
+                <img src="assets/web/icon-alerts/circle-exclamation-solid.svg" alt="error Logo"
+                    class="alert error icon">
+                <p class="alert error number">34</p>
                 <p class="alert error text">Errors</p>
-                <img src="" alt="" class="alert error graph">
+                <img src="assets/web/icon-other/arrow-up-solid.svg" alt="" class="alert error arrow icon">
             </div>
             <div class="alert overview in critical">
-                <img src="" alt="Critical Logo" class="alert critical logo">
-                <p class="alert critical number">123</p>
+                <img src="assets/web/icon-alerts/circle-xmark-solid.svg" alt="Critical Logo"
+                    class="alert critical icon">
+                <p class="alert critical number">12</p>
                 <p class="alert critical text">Critical</p>
-                <img src="" alt="" class="alert critical graph">
+                <img src="assets/web/icon-other/arrow-down-solid.svg" alt="" class="alert critical arrow icon">
             </div>
         </section>
 
@@ -268,7 +285,8 @@
     <footer>
         <div>
             <p>
-                mlksathil <a href=""><img src="" alt="github"></a> 2022
+                mlksathil <a href=""><img src="assets/web/icon-other/github-brands.svg" alt="github"
+                        class="icon footer"></a> 2022
             </p>
         </div>
     </footer>
