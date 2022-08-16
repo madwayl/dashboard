@@ -80,6 +80,8 @@ button.icon-label {
     border-radius: 50%;
 }
 
+/* !SECTION */
+
 /* SECTION Navigation */
 
 
@@ -147,6 +149,8 @@ div.nav {
     margin-top: auto;
 }
 
+/* !SECTION */
+
 /* SECTION Main */
 
 main.body {
@@ -155,6 +159,7 @@ main.body {
 
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    /* grid-template: repeat(4, 1fr) / repeat(auto-fit, minmax(200px, 1fr)); */
     grid-template-areas: "alert alert alert"
         "graph graph recents"
         "graph graph recents"
@@ -164,6 +169,7 @@ main.body {
     overflow-y: auto;
 }
 
+/* SECTION Alert */
 section.alert {
     margin: .5rem;
     grid-area: alert;
@@ -173,13 +179,32 @@ section.alert {
     gap: 1rem;
 }
 
+.alert.overview {
+    display: grid;
+    grid-template-areas:
+        "logo number graph"
+        "text text graph"
+}
+
 .alert.number {
     font-size: 3rem;
     margin: 0;
+
+    grid-area: number;
 }
 
 .alert.text {
     margin: 0;
+
+    grid-area: text;
+}
+
+.alert.logo {
+    grid-area: logo;
+}
+
+.alert.graph {
+    grid-area: graph
 }
 
 .alert.in {
@@ -187,9 +212,106 @@ section.alert {
     margin-bottom: -1rem;
 }
 
+/* !SECTION */
+
+/* SECTION Graph */
+
 section.graph {
     grid-area: graph;
+    padding: 1rem;
+
 }
+
+main.graph {
+    height: 100%;
+
+    /* display: flex;
+    gap: 2rem;
+    justify-content: center; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+}
+
+.bars {
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: end;
+    gap: 0.5rem;
+
+    justify-content: center;
+}
+
+.bar {
+    grid-row: 1 / 10;
+    width: max(20px, 4rem);
+}
+
+.bar.count {
+    position: absolute;
+
+    height: 100%;
+
+    background-color: gray;
+}
+
+
+.bar.warning {
+    z-index: 3;
+
+    height: 70%;
+
+    position: absolute;
+
+    background-color: orange;
+
+}
+
+.bar.error {
+    z-index: 4;
+
+    height: 40%;
+
+    position: absolute;
+
+    background-color: red;
+
+}
+
+.bar.critical {
+    z-index: 5;
+
+    height: 30%;
+
+    position: absolute;
+
+    background-color: brown;
+
+}
+
+.bar.name {
+    grid-row: 10 / -1;
+    align-self: start;
+
+    margin: 0;
+
+    font-size: 0.8rem;
+
+    position: absolute;
+
+    text-align: center;
+}
+
+/* !SECTION */
+
+/* SECTION Recents */
 
 section.recents {
     grid-area: recents;
@@ -220,6 +342,10 @@ div.recent {
     margin: .2rem;
     align-items: center;
 }
+
+/* !SECTION */
+
+/* !SECTION */
 
 /* SECTION Footer */
 
