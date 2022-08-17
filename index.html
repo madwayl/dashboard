@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <div class='profile'>
+            <div class='profile main'>
                 <img src="./assets/web/profile/gray-profile.png" alt="profile" class="profile image">
                 <p class="profile name">John Doe</p>
             </div>
@@ -147,18 +147,18 @@
 
     <main class="body">
 
-        <!-- Article 1: Alert Count
-        Alerts Not Responded
-            Warnings
-                Numbers + Image
-            Errors
-                Numbers + Image
-            Criticals
-                Numbers + Image -->
+        <!-- SECTION Article 1
+            Alert Count : Alerts Not Responded
+                Warnings
+                    Numbers + Image
+                Errors
+                    Numbers + Image
+                Criticals
+                    Numbers + Image -->
 
         <!-- SECTION Alert -->
 
-        <section class="alert">
+        <section class="article high alert">
             <div class="alert overview in count down">
                 <img src="assets/web/icon-alerts/exclamation-solid.svg" alt="Alert Logo" class="alert count icon">
                 <p class="alert count number">123</p>
@@ -189,98 +189,104 @@
         </section>
 
         <!-- !SECTION -->
+        <!-- !SECTION -->
 
-        <!-- Article 2: 
+        <!-- SECTION Article 2:
             Div A : Graph 
             Div B : Tickets Assgined -->
 
-        <!-- SECTION Graph -->
+        <section class="article low gr">
+            <!-- SECTION Graph -->
 
-        <section class="graph">
-            <main class="graph">
-                <div class="bars" id="bar1">
-                    <div class="bar count" id="o1" style="height: 65%"></div>
-                    <div class="bar warning" id="w1" style="height: 45%"></div>
-                    <div class="bar error" id="e1" style="height: 25%"></div>
-                    <div class="bar critical" id="c1" style="height: 23%"></div>
-                    <p class="bar name">March</p>
-                </div>
-                <div class="bars" id="bar2">
-                    <div class="bar count" id="o2" style="height: 43%"></div>
-                    <div class="bar warning" id="w2" style="height: 23%"></div>
-                    <div class="bar error" id="e2" style="height: 18%"></div>
-                    <div class="bar critical" id="c2" style="height: 15%"></div>
-                    <p class="bar name">April</p>
-                </div>
-                <div class="bars" id="bar3">
-                    <div class="bar count" id="o3" style="height: 45%"></div>
-                    <div class="bar warning" id="w3" style="height: 34%"></div>
-                    <div class="bar error" id="e3" style="height: 12%"></div>
-                    <div class="bar critical" id="c3" style="height: 9%"></div>
-                    <p class="bar name">May</p>
-                </div>
-                <div class="bars" id="bar4">
-                    <div class="bar count" id="o4" style="height: 90%"></div>
-                    <div class="bar warning" id="w4" style="height: 55%"></div>
-                    <div class="bar error" id="e4" style="height: 55%"></div>
-                    <div class="bar critical" id="c4" style="height: 45%"></div>
-                    <p class="bar name">July</p>
-                </div>
-                <div class="bars" id="bar5">
-                    <div class="bar count" id="o5" style="height: 70%"></div>
-                    <div class="bar warning" id="w5" style="height: 65%"></div>
-                    <div class="bar error" id="e5" style="height: 25%"></div>
-                    <div class="bar critical" id="c5" style="height: 25%"></div>
-                    <p class="bar name">June</p>
-                </div>
-                <div class="bars" id="bar6">
-                    <div class="bar count" id="o6" style="height: 90%"></div>
-                    <div class="bar warning" id="w6" style="height: 34%"></div>
-                    <div class="bar error" id="e6" style="height: 25%"></div>
-                    <div class="bar critical" id="c6" style="height: 11%"></div>
-                    <p class="bar name">This Month</p>
-                </div>
-            </main>
-        </section>
-
-        <!-- !SECTION -->
-
-        <!-- SECTION Recent Alerts -->
-
-        <section class="recents">
-            <h3>Recent Alerts</h3>
-            <section class="recents body">
-                <div class="recent">
-                    <input type="checkbox" name="recents" id="alert1" class="recent check">
-                    <label for="alert1" class="recent text" data-type="alert">Upgrade Successfully Completed</label>
-                </div>
-                <div class="recent">
-                    <input type="checkbox" name="recents" id="warning1" class="recent check">
-                    <label for="warning1" class="recent text" data-type="warning">Unkown User Login</label>
-                </div>
-                <div class="recent">
-                    <input type="checkbox" name="recents" id="warning2" class="recent check">
-                    <label for="warning2" class="recent text" data-type="warning">Performance Issues Encountered</label>
-                </div>
-                <div class="recent">
-                    <input type="checkbox" name="recents" id="error1" class="recent check">
-                    <label for="error1" class="recent text" data-type="error">Compatibility Issues</label>
-                </div>
-                <div class="recent">
-                    <input type="checkbox" name="recents" id="alert2" class="recent check">
-                    <label for="alert2" class="recent text" data-type="alert">New Account Created Successfully</label>
-                </div>
-                <div class="recent">
-                    <input type="checkbox" name="recents" id="alert3" class="recent check">
-                    <label for="alert3" class="recent text" data-type="alert">Upgrade Insider Packages on
-                        Progress</label>
-                </div>
+            <section class="graph">
+                <main class="graph">
+                    <div class="bars" id="bar1">
+                        <div class="bar count" id="o1" style="height: 65%"></div>
+                        <div class="bar warning" id="w1" style="height: 45%"></div>
+                        <div class="bar error" id="e1" style="height: 25%"></div>
+                        <div class="bar critical" id="c1" style="height: 23%"></div>
+                        <p class="bar name">March</p>
+                    </div>
+                    <div class="bars" id="bar2">
+                        <div class="bar count" id="o2" style="height: 43%"></div>
+                        <div class="bar warning" id="w2" style="height: 23%"></div>
+                        <div class="bar error" id="e2" style="height: 18%"></div>
+                        <div class="bar critical" id="c2" style="height: 15%"></div>
+                        <p class="bar name">April</p>
+                    </div>
+                    <div class="bars" id="bar3">
+                        <div class="bar count" id="o3" style="height: 45%"></div>
+                        <div class="bar warning" id="w3" style="height: 34%"></div>
+                        <div class="bar error" id="e3" style="height: 12%"></div>
+                        <div class="bar critical" id="c3" style="height: 9%"></div>
+                        <p class="bar name">May</p>
+                    </div>
+                    <div class="bars" id="bar4">
+                        <div class="bar count" id="o4" style="height: 90%"></div>
+                        <div class="bar warning" id="w4" style="height: 55%"></div>
+                        <div class="bar error" id="e4" style="height: 55%"></div>
+                        <div class="bar critical" id="c4" style="height: 45%"></div>
+                        <p class="bar name">July</p>
+                    </div>
+                    <div class="bars" id="bar5">
+                        <div class="bar count" id="o5" style="height: 70%"></div>
+                        <div class="bar warning" id="w5" style="height: 65%"></div>
+                        <div class="bar error" id="e5" style="height: 25%"></div>
+                        <div class="bar critical" id="c5" style="height: 25%"></div>
+                        <p class="bar name">June</p>
+                    </div>
+                    <div class="bars" id="bar6">
+                        <div class="bar count" id="o6" style="height: 90%"></div>
+                        <div class="bar warning" id="w6" style="height: 34%"></div>
+                        <div class="bar error" id="e6" style="height: 25%"></div>
+                        <div class="bar critical" id="c6" style="height: 11%"></div>
+                        <p class="bar name">This Month</p>
+                    </div>
+                </main>
             </section>
+
+            <!-- !SECTION -->
+
+            <!-- SECTION Recent Alerts -->
+
+            <section class="recents">
+                <h3>Recent Alerts</h3>
+                <section class="recents body">
+                    <div class="recent">
+                        <input type="checkbox" name="recents" id="alert1" class="recent check alert">
+                        <label for="alert1" class="recent text alert" data-type="alert">Upgrade Successfully
+                            Completed</label>
+                    </div>
+                    <div class="recent">
+                        <input type="checkbox" name="recents" id="warning1" class="recent check warning">
+                        <label for="warning1" class="recent text warning" data-type="warning">Unkown User Login</label>
+                    </div>
+                    <div class="recent">
+                        <input type="checkbox" name="recents" id="warning2" class="recent check warning">
+                        <label for="warning2" class="recent text warning" data-type="warning">Performance Issues
+                            Encountered</label>
+                    </div>
+                    <div class="recent">
+                        <input type="checkbox" name="recents" id="error1" class="recent check error">
+                        <label for="error1" class="recent text error" data-type="error">Compatibility Issues</label>
+                    </div>
+                    <div class="recent">
+                        <input type="checkbox" name="recents" id="alert2" class="recent check alert">
+                        <label for="alert2" class="recent text alert" data-type="alert">New Account Created
+                            Successfully</label>
+                    </div>
+                    <div class="recent">
+                        <input type="checkbox" name="recents" id="alert3" class="recent check alert">
+                        <label for="alert3" class="recent text alert" data-type="alert">Upgrade Insider Packages on
+                            Progress</label>
+                    </div>
+                </section>
+            </section>
+
+            <!-- !SECTION -->
         </section>
 
     </main>
-
-    <!-- !SECTION -->
 
     <!-- !SECTION -->
 
