@@ -21,7 +21,9 @@
 
     <header>
         <section class="top">
-            <input type="search" name="search" id="search">
+            <div class="search">
+                <input type="search" name="search" id="search" placeholder="Search here">
+            </div>
             <div class='notification'>
                 <img src="assets/web/icon-other/bell-solid.svg" alt="" class="notification icon">
             </div>
@@ -96,7 +98,7 @@
 
             <section class="nav top">
                 <ul>
-                    <li class="nav struct overview">
+                    <li class="nav struct overview selected">
                         <img src="assets/web/icon-nav/border-all-solid.svg" alt="Overview" class="icon overview">
                         <p class="overview text">Overview</p>
                     </li>
@@ -123,11 +125,11 @@
                 <ul>
                     <li class="nav struct settings">
                         <img src="assets/web/icon-nav/gear-solid.svg" alt="Settings" class="icon settings">
-                        <p class="nav text">Settings</p>
+                        <p class="setting text">Settings</p>
                     </li>
                     <li class="nav struct help">
                         <img src="assets/web/icon-nav/circle-question-solid.svg" alt="Help Desk" class="icon help">
-                        <p class=" help text">Help Desk</p>
+                        <p class="help text">Help Desk</p>
                     </li>
                     <li class="nav struct logout">
                         <img src="assets/web/icon-nav/arrow-right-from-bracket-solid.svg" alt="Log Out"
@@ -157,32 +159,32 @@
         <!-- SECTION Alert -->
 
         <section class="alert">
-            <div class="alert overview count">
+            <div class="alert overview in count down">
                 <img src="assets/web/icon-alerts/exclamation-solid.svg" alt="Alert Logo" class="alert count icon">
                 <p class="alert count number">123</p>
                 <p class="alert count text">Alerts Not Responded</p>
-                <img src="assets/web/icon-other/arrow-down-solid.svg" alt="" class="alert count arrow icon">
+                <!-- <img src="assets/web/icon-other/arrow-down-solid.svg" alt="" class="alert count arrow icon"> -->
             </div>
-            <div class="alert overview in warning">
+            <div class="alert overview in warning up">
                 <img src="assets/web/icon-alerts/triangle-exclamation-solid.svg" alt="Warning Logo"
                     class="alert warning icon">
                 <p class="alert warning number">50</p>
                 <p class="alert warning text">Warnings</p>
-                <img src="assets/web/icon-other/arrow-up-solid.svg" alt="" class="alert warning arrow icon">
+                <!-- <img src="assets/web/icon-other/arrow-up-solid.svg" alt="" class="alert warning arrow icon"> -->
             </div>
-            <div class="alert overview in error">
+            <div class="alert overview in error down">
                 <img src="assets/web/icon-alerts/circle-exclamation-solid.svg" alt="error Logo"
                     class="alert error icon">
                 <p class="alert error number">34</p>
                 <p class="alert error text">Errors</p>
-                <img src="assets/web/icon-other/arrow-up-solid.svg" alt="" class="alert error arrow icon">
+                <!-- <img src="assets/web/icon-other/arrow-up-solid.svg" alt="" class="alert error arrow icon"> -->
             </div>
-            <div class="alert overview in critical">
+            <div class="alert overview in critical up">
                 <img src="assets/web/icon-alerts/circle-xmark-solid.svg" alt="Critical Logo"
                     class="alert critical icon">
                 <p class="alert critical number">12</p>
                 <p class="alert critical text">Critical</p>
-                <img src="assets/web/icon-other/arrow-down-solid.svg" alt="" class="alert critical arrow icon">
+                <!-- <img src="assets/web/icon-other/arrow-down-solid.svg" alt="" class="alert critical arrow icon"> -->
             </div>
         </section>
 
@@ -250,27 +252,28 @@
             <section class="recents body">
                 <div class="recent">
                     <input type="checkbox" name="recents" id="alert1" class="recent check">
-                    <label for="alert1" class="recent text">Upgrade Successfully Completed</label>
+                    <label for="alert1" class="recent text" data-type="alert">Upgrade Successfully Completed</label>
                 </div>
                 <div class="recent">
                     <input type="checkbox" name="recents" id="warning1" class="recent check">
-                    <label for="warning1" class="recent text">Unkown User Login</label>
+                    <label for="warning1" class="recent text" data-type="warning">Unkown User Login</label>
                 </div>
                 <div class="recent">
                     <input type="checkbox" name="recents" id="warning2" class="recent check">
-                    <label for="warning2" class="recent text">Performance Issues Encountered</label>
+                    <label for="warning2" class="recent text" data-type="warning">Performance Issues Encountered</label>
                 </div>
                 <div class="recent">
                     <input type="checkbox" name="recents" id="error1" class="recent check">
-                    <label for="error1" class="recent text">Compatibility Issues</label>
+                    <label for="error1" class="recent text" data-type="error">Compatibility Issues</label>
                 </div>
                 <div class="recent">
                     <input type="checkbox" name="recents" id="alert2" class="recent check">
-                    <label for="alert2" class="recent text">New Account Created Successfully</label>
+                    <label for="alert2" class="recent text" data-type="alert">New Account Created Successfully</label>
                 </div>
                 <div class="recent">
                     <input type="checkbox" name="recents" id="alert3" class="recent check">
-                    <label for="alert3" class="recent text">Upgrade Insider Packages on Progress</label>
+                    <label for="alert3" class="recent text" data-type="alert">Upgrade Insider Packages on
+                        Progress</label>
                 </div>
             </section>
         </section>
