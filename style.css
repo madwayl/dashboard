@@ -1,9 +1,11 @@
-* {
-    /* outline: 1px solid red; */
-}
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800&display=swap');
+
+/* * {
+    outline: 1px solid red;
+} */
 
 :root {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Red Hat Display', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     font-size: clamp(15px, 2rem, 1vw);
 
@@ -126,6 +128,7 @@ input[type="search"]::-webkit-textfield-decoration-container {
 
 input[type="search"]::-webkit-input-placeholder {
     padding: 2.5rem;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -317,7 +320,7 @@ div.notification.none {
 }
 
 .profile.name {
-    font-weight: 600;
+    font-weight: 700;
 
     margin: 0;
     padding: 1rem .5rem 1rem 3.5rem;
@@ -458,12 +461,14 @@ img.profile.main {
 }
 
 .greeting>h1 {
+    font-weight: 800;
     font-size: 2rem;
     margin-bottom: .5rem;
     width: max-content;
 }
 
 .greeting>h4 {
+    font-weight: 600;
     margin-top: 0;
     color: var(--dark-gray);
 }
@@ -582,7 +587,7 @@ nav:hover .nav.struct.logo>.logo.text {
     margin: auto;
     padding: 0;
 
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.5rem;
 }
 
@@ -603,6 +608,8 @@ li.nav {
 }
 
 .nav>.text {
+    font-weight: 500;
+
     justify-self: start;
     align-items: center;
 
@@ -828,6 +835,10 @@ section.alert {
 
 .alert.number {
     font-size: 3rem;
+    font-weight: 800;
+
+    opacity: .9;
+
     margin: 0;
 
     grid-column: 2;
@@ -835,6 +846,8 @@ section.alert {
 
 .alert.text {
     margin: 0;
+
+    font-weight: 700;
 
     grid-column: 1 / 4;
     grid-row: 2;
@@ -964,6 +977,7 @@ main.graph::after {
     margin: 0;
 
     font-size: 0.8rem;
+    font-weight: 700;
 
     position: absolute;
 
@@ -1007,6 +1021,8 @@ div.recent {
 
 .recent.text {
     margin: .2rem;
+
+    font-weight: 500;
 }
 
 /* ANCHOR Checkbox Styling */
@@ -1032,20 +1048,19 @@ input[type="checkbox"]:checked+label {
     text-decoration: line-through;
 }
 
-input[type="checkbox"].alert:checked {
+input[type="checkbox"].alert-tag:checked {
     background-color: var(--alert);
 }
 
-input[type="checkbox"].warning:checked,
-input[type="checkbox"].warning:active {
+input[type="checkbox"].warning-tag:checked {
     background-color: var(--warning);
 }
 
-input[type="checkbox"].error:checked {
+input[type="checkbox"].error-tag:checked {
     background-color: var(--error);
 }
 
-input[type="checkbox"].critical:checked {
+input[type="checkbox"].critical-tag:checked {
     background-color: var(--critical);
 }
 
@@ -1063,19 +1078,19 @@ label.recent::after {
     padding: .4rem;
 }
 
-label.recent.alert::after {
+label.recent.alert-tag::after {
     background-color: var(--alert);
 }
 
-label.recent.warning::after {
+label.recent.warning-tag::after {
     background-color: var(--warning);
 }
 
-label.recent.error::after {
+label.recent.error-tag::after {
     background-color: var(--error);
 }
 
-label.recent.bar.critical::after {
+label.recent.bar.critical-tag::after {
     background-color: var(--critical);
 }
 
