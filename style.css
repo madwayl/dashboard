@@ -136,7 +136,9 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     opacity: 1;
 }
 
-div.notification {
+/* ANCHOR Notification Bell */
+
+div.notification.menu {
     grid-area: notification;
     align-self: center;
     justify-self: center;
@@ -152,7 +154,11 @@ div.notification {
     position: relative;
 }
 
-div.notification::after {
+div.notification.menu:hover {
+    box-shadow: none;
+}
+
+div.notification.menu::after {
     content: '';
     border: .3rem solid var(--bright-red);
     border-radius: 5rem;
@@ -163,6 +169,81 @@ div.notification::after {
     position: absolute;
 }
 
+div.notification.selection {
+    position: absolute;
+    top: 10%;
+    right: 15.65%;
+
+    min-width: max(20vw, 15rem);
+
+    border-radius: .5rem;
+
+    background-color: var(--light-gray);
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    z-index: 5;
+
+    display: grid;
+    grid-template-rows: .9fr 1.15fr;
+
+    overflow: hidden;
+}
+
+.notification.header {
+    padding-left: 1rem;
+
+    height: 1rem;
+
+    font-weight: 600;
+}
+
+.notification.body {
+    background-color: var(--white);
+    opacity: .8;
+
+    min-height: 10%;
+    margin: 0 0 1rem;
+
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.notification.message {
+    padding-left: 1rem;
+
+    font-size: .8rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .6rem;
+
+    margin: 0 .5rem 0 0;
+}
+
+div.notification.message-close {
+    background: url(./assets/web/icon-other/xmark-solid.svg) center / .5rem no-repeat;
+
+    width: 2rem;
+    height: 2rem;
+
+    cursor: pointer;
+}
+
+div.notification.message-close:hover {
+    filter: invert(12%) sepia(58%) saturate(6955%) hue-rotate(357deg) brightness(94%) contrast(94%);
+}
+
+div.notification.none {
+    text-align: center;
+    padding: 1rem 0;
+
+    font-size: .9rem;
+    opacity: .5;
+
+}
+
+/* ANCHOR Profile */
 .profile.main {
     grid-area: profile;
 
@@ -174,6 +255,7 @@ div.notification::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: .5rem;
 }
 
 .profile.image {
@@ -698,7 +780,7 @@ main.graph::after {
 
 /* SECTION Recents */
 
-section.recents {
+section.recents.main {
     margin-top: 2rem;
 
     font-size: .9rem;
@@ -748,24 +830,8 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-input[type="checkbox"].alert:hover {
-    background-color: var(--alert);
-    opacity: .7;
-}
-
-input[type="checkbox"].warning:hover {
-    background-color: var(--warning);
-    opacity: .7;
-}
-
-input[type="checkbox"].error:hover {
-    background-color: var(--error);
-    opacity: .7;
-}
-
-input[type="checkbox"].critical:hover {
-    background-color: var(--critical);
-    opacity: .7;
+input[type="checkbox"]:hover {
+    border: 3px solid var(--black);
 }
 
 input[type="checkbox"]:checked+label {
@@ -776,7 +842,8 @@ input[type="checkbox"].alert:checked {
     background-color: var(--alert);
 }
 
-input[type="checkbox"].warning:checked {
+input[type="checkbox"].warning:checked,
+input[type="checkbox"].warning:active {
     background-color: var(--warning);
 }
 

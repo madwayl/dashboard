@@ -24,13 +24,18 @@
             <div class="search">
                 <input type="search" name="search" id="search" placeholder="Search here">
             </div>
-            <div class='notification'>
+            <div class='notification menu'>
                 <img src="assets/web/icon-other/bell-solid.svg" alt="" class="notification icon">
             </div>
 
-            <div class='notification selection' style='display: none'>
-                <div class="notification message">
-                    <p class="notification message text">Just Kidding! Nothing here. </p>
+            <div class='notification selection' style="display: none;">
+                <p class="notification header">Notifications </p>
+                <div class="notification body">
+                    <div class="notification message">
+                        <p class="notification message-text">Just Kidding! Nothing here. </p>
+                        <div class="notification message-close"></div>
+                    </div>
+                    <div class="notification none" style="display: none;">None Here!</div>
                 </div>
             </div>
 
@@ -45,10 +50,10 @@
                     <input type="radio" name="status" id="busy">
                     <input type="radio" name="status" id="offline">
                 </div>
-                <div class="profile s">
-                    <input type="radio" name="profiles" id="john" checked>
-                    <input type="radio" name="profiles" id="margaret">
-                    <input type="radio" name="profiles" id="alex">
+                <div class="profile nomo">
+                    <input type="radio" name="profiles" id="john" checked data-name="John Doe">
+                    <input type="radio" name="profiles" id="margaret" data-name="Primose Margaret">
+                    <input type="radio" name="profiles" id="alex" data-name="Alex Gray">
                 </div>
                 <div class="profile settings"> Profile Settings </div>
             </div>
@@ -191,7 +196,7 @@
         <!-- !SECTION -->
         <!-- !SECTION -->
 
-        <!-- SECTION Article 2:
+        <!-- SECTION Article 2
             Div A : Graph 
             Div B : Tickets Assgined -->
 
@@ -249,7 +254,7 @@
 
             <!-- SECTION Recent Alerts -->
 
-            <section class="recents">
+            <section class="recents main">
                 <h3>Recent Alerts</h3>
                 <section class="recents body">
                     <div class="recent">
