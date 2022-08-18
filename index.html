@@ -39,23 +39,27 @@
                 </div>
             </div>
 
-            <div class='profile main'>
-                <img src="./assets/web/profile/gray-profile.png" alt="profile" class="profile image">
+            <div class='profile main online'>
+                <img src="./assets/web/profile/gray-profile.png" alt="profile" class="profile image side">
                 <p class="profile name">John Doe</p>
             </div>
 
-            <div class='profile selection' style='display: none'>
-                <div class="status">
-                    <input type="radio" name="status" id="online" checked>
-                    <input type="radio" name="status" id="busy">
-                    <input type="radio" name="status" id="offline">
+            <div class='profile selection' style="display: none;">
+                <div class="profile status head"> Status </div>
+                <div class="status main">
+                    <input type="radio" name="status" id="online" checked><label for="online">Online</label>
+                    <input type="radio" name="status" id="busy"><label for="busy">Busy</label>
+                    <input type="radio" name="status" id="offline"><label for="offline">Offline</label>
                 </div>
-                <div class="profile nomo">
-                    <input type="radio" name="profiles" id="john" checked data-name="John Doe">
-                    <input type="radio" name="profiles" id="margaret" data-name="Primose Margaret">
-                    <input type="radio" name="profiles" id="alex" data-name="Alex Gray">
+                <div class="profile login head"> Other Login Profile</div>
+                <div class="profile login">
+                    <input type="radio" name="profiles" id="john" checked data-name="John Doe"><label for="john"
+                        class="img"><img src="./assets/web/profile/gray-profile.png" alt=""></label>
+                    <input type="radio" name="profiles" id="margaret" data-name="Primose Margaret"><label for="margaret"
+                        class="img"><img src="./assets/web/profile/pink-profile.png" alt=""></label>
+                    <input type="radio" name="profiles" id="alex" data-name="Alex Gray"><label for="alex"
+                        class="img"><img src="./assets/web/profile/green-profile.png" alt=""></label>
                 </div>
-                <div class="profile settings"> Profile Settings </div>
             </div>
         </section>
 

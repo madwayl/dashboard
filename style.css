@@ -1,5 +1,6 @@
 * {
     /* outline: 1px solid red; */
+    transition: .2s;
 }
 
 :root {
@@ -27,11 +28,14 @@
     --critical: #630606;
     --dark-critical: #300303;
 
+    --bright-green: #6cdf15;
+    --green: #68b130;
     --dark-green: #243D25;
-    --dark-red: #2D132C;
 
     --bright-red: #FF1E00;
-    --bright-green: #6cdf15;
+    --pink: #ff569f;
+    --dark-red: #2D132C;
+
     --bright-yellow: #ffdf52;
 }
 
@@ -77,7 +81,7 @@ header {
 
 header section.top {
     display: grid;
-    grid-template-columns: repeat(2, 2fr) 1fr 1fr .25fr 1.25fr;
+    grid-template-columns: repeat(2, 2fr) 1fr 1fr .25fr 1fr;
     grid-template-areas:
         "search search . . notification profile";
     gap: 1rem
@@ -117,7 +121,6 @@ div.search {
 input[type="search"]::-webkit-textfield-decoration-container {
     padding: 2.5rem;
     background: no-repeat left .7rem center / 1.2rem url(./assets/web/icon-other/magnifying-glass-solid.svg);
-
 }
 
 input[type="search"]::-webkit-input-placeholder {
@@ -149,13 +152,13 @@ div.notification.menu {
     border-radius: 50%;
     border: .2rem solid var(--light-gray);
 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
     position: relative;
+
+    cursor: pointer;
 }
 
 div.notification.menu:hover {
-    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 div.notification.menu::after {
@@ -246,29 +249,181 @@ div.notification.none {
 /* ANCHOR Profile */
 .profile.main {
     grid-area: profile;
+    justify-self: end;
 
     text-align: center;
 
     width: max-content;
-    margin: 0 .25rem;
+    margin: 0 1.5rem 0 .25rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
+    gap: .25rem;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.profile.main::after {
+    content: ' ';
+
+    position: absolute;
+    left: .4rem;
+
+    width: 2.15rem;
+    height: 2.15rem;
+    border-radius: 50%;
+
+    z-index: 6;
+}
+
+.profile.main.online::after {
+    border: 3px solid var(--bright-green);
+}
+
+.profile.main.busy::after {
+    border: 3px solid var(--bright-red);
+}
+
+.profile.main.offline::after {
+    border: 3px solid var(--gray);
+}
+
+
+.profile.main:hover>* {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 .profile.image {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
 
     margin: .15rem;
     padding: 0;
 
     border-radius: 50%;
     border: .3rem solid var(--light-gray);
+}
 
+.profile.image.side {
+    margin-right: -3.32rem;
+
+    z-index: 2;
+}
+
+.profile.name {
+    font-weight: 600;
+
+    margin: 0;
+    padding: 1rem .5rem 1rem 3.5rem;
+
+    border-radius: 2rem;
+}
+
+.profile.selection {
+    position: absolute;
+    top: 11.5%;
+    right: 1.95%;
+
+    background-color: var(--white);
+
+    z-index: 6;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    font-weight: 600;
+
+    padding: 1rem;
+    min-width: 10rem;
+
+    border-radius: .5rem;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.profile.selection input[type="radio"] {
+    appearance: none;
+}
+
+.status.main>input {
+    border: .1rem solid var(--black);
+    border-radius: 2rem;
+
+    height: 1rem;
+    width: 1rem;
+
+    margin: 0 -1.35rem 0 .6rem;
+
+    cursor: pointer;
+}
+
+.status.main>label {
+    font-size: .7rem;
+    font-weight: 400;
+    position: relative;
+
+    bottom: .25rem;
+
+    padding: .25rem .4rem .25rem 1.5rem;
+
+    border: 1px solid var(--black);
+    border-radius: 2rem;
+
+    cursor: pointer;
+}
+
+.status.main>input#online:checked {
+    background-color: var(--bright-green);
+}
+
+.status.main>input#offline:checked {
+    background-color: var(--gray);
+}
+
+.status.main>input#busy:checked {
+    background-color: var(--bright-red);
+}
+
+.profile.login input+label {
     box-sizing: border-box;
+    display: contents;
+}
+
+.profile.login input+label img {
+    width: 3rem;
+    height: 3rem;
+    border: .4rem solid var(--white);
+    border-radius: 10rem;
+
+    padding: 0;
+    margin: 0;
+
+    opacity: .7;
+
+    cursor: pointer;
+}
+
+.profile.login input:checked+label img {
+    opacity: 1;
+}
+
+.profile.login input#john:checked+label img {
+    border: .4rem solid var(--gray);
+}
+
+.profile.login input#margaret:checked+label img {
+    border: .4rem solid var(--pink);
+}
+
+.profile.login input#alex:checked+label img {
+    border: .4rem solid var(--green);
 }
 
 /* !SECTION */
@@ -276,7 +431,7 @@ div.notification.none {
 /* SECTION Bottom Header */
 
 header section.bottom {
-    margin: 0 1rem;
+    margin: 0 1rem 1rem;
 
     display: flex;
     flex-flow: row wrap;
@@ -336,6 +491,8 @@ button.icon {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
 }
 
 img.header.icon {
@@ -484,6 +641,21 @@ main.body {
     gap: 2rem 2rem;
 
     overflow-y: auto;
+}
+
+/* ANCHOR Scroll Bar */
+
+main.body::-webkit-scrollbar {
+    width: .2em;
+}
+
+main.body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+main.body::-webkit-scrollbar-thumb {
+    background-color: var(--dark-gray);
+    border-radius: 2rem;
 }
 
 /* SECTION Alert */
@@ -664,7 +836,7 @@ section.article.low.gr {
 
     display: flex;
     flex-flow: row wrap;
-    gap: 2rem;
+    gap: .5rem;
     justify-content: center;
 
 }
