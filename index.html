@@ -24,6 +24,12 @@
             <div class="search">
                 <input type="search" name="search" id="search" placeholder="Search Recent Alerts">
                 <span class="search-cancel"></span>
+                <div class="search-dialog" style="display: none;">
+                    <div class="results head">Search Results</div>
+                    <div class="results body">
+
+                    </div>
+                </div>
             </div>
 
             <div class='notification menu notify'>
@@ -263,35 +269,8 @@
             <section class="recents main">
                 <h3>Recent Alerts</h3>
                 <section class="recents body">
-                    <div class="recent">
-                        <input type="checkbox" name="recents" id="alert1" class="recent check alert-tag">
-                        <label for="alert1" class="recent text alert-tag" data-type="alert">Upgrade Successfully
-                            Completed</label>
-                    </div>
-                    <div class="recent">
-                        <input type="checkbox" name="recents" id="warning1" class="recent check warning-tag">
-                        <label for="warning1" class="recent text warning-tag" data-type="warning">Unkown User
-                            Login</label>
-                    </div>
-                    <div class="recent">
-                        <input type="checkbox" name="recents" id="warning2" class="recent check warning-tag">
-                        <label for="warning2" class="recent text warning-tag" data-type="warning">Performance Issues
-                            Encountered</label>
-                    </div>
-                    <div class="recent">
-                        <input type="checkbox" name="recents" id="error1" class="recent check error-tag">
-                        <label for="error1" class="recent text error-tag" data-type="error">Compatibility Issues</label>
-                    </div>
-                    <div class="recent">
-                        <input type="checkbox" name="recents" id="alert2" class="recent check alert-tag">
-                        <label for="alert2" class="recent text alert-tag" data-type="alert">New Account Created
-                            Successfully</label>
-                    </div>
-                    <div class="recent">
-                        <input type="checkbox" name="recents" id="alert3" class="recent check alert-tag">
-                        <label for="alert3" class="recent text alert-tag" data-type="alert">Upgrade Insider Packages on
-                            Progress</label>
-                    </div>
+                    <!-- Renders on JavaScript Dynamically -->
+                    <div class="recent none" style="display: none;">Nothing to Display</div>
                 </section>
             </section>
 
@@ -318,6 +297,7 @@
     <!-- !SECTION -->
 
     <script src="./script.js"></script>
+    <script src="./alerts.js"></script>
 
 </body>
 

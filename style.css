@@ -173,6 +173,16 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     opacity: 1;
 }
 
+/* ANCHOR Search Box Adjustments */
+
+.search-dialog {
+    position: absolute;
+    bottom: .5rem;
+    left: 2rem;
+
+    width: 95%;
+}
+
 /* ANCHOR Notification Bell */
 
 div.notification.menu {
@@ -1062,6 +1072,11 @@ div.recent {
     font-weight: 500;
 }
 
+.recent.none {
+    width: 100%;
+
+}
+
 /* ANCHOR Checkbox Styling */
 
 input[type="checkbox"] {
@@ -1102,33 +1117,35 @@ input[type="checkbox"].critical-tag:checked {
 }
 
 
-/* ANCHOR Recent Box Hilights */
-
-
 /* ANCHOR Recents Tags  */
 label.recent::after {
     content: attr(data-type);
     font-size: .65rem;
 
     border-radius: 2rem;
-    margin: .5rem;
-    padding: .4rem;
+    margin: 0 .5rem;
+    padding: .2rem .6rem;
 }
 
 label.recent.alert-tag::after {
     background-color: var(--alert);
+    color: var(--dark-alert);
 }
 
 label.recent.warning-tag::after {
     background-color: var(--warning);
+    color: var(--dark-warning);
 }
 
 label.recent.error-tag::after {
     background-color: var(--error);
+    color: var(--gray);
+
 }
 
-label.recent.bar.critical-tag::after {
+label.recent.critical-tag::after {
     background-color: var(--critical);
+    color: var(--bright-red);
 }
 
 /* !SECTION */
