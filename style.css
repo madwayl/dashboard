@@ -167,7 +167,7 @@ div.notification.menu:hover {
 
 div.notification.menu.notify::after {
     content: '';
-    border: .3rem solid var(--bright-red);
+    border: .34rem solid var(--bright-red);
     border-radius: 5rem;
 
     bottom: 0;
