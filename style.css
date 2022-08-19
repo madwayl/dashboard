@@ -165,7 +165,7 @@ div.notification.menu:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-div.notification.menu::after {
+div.notification.menu.notify::after {
     content: '';
     border: .3rem solid var(--bright-red);
     border-radius: 5rem;
