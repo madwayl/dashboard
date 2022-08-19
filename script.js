@@ -1,19 +1,24 @@
-
+// Notification Menu Display
 const notification = document.querySelector('.notification.menu');
 const notificationMenu = document.querySelector('.notification.selection');
+// Notification Close
+const notificationClose = document.querySelector('.notification.message-close')
+// Display None Notification
+const displayNoNotification = document.querySelector('.notification.none')
 
+// Profile Menu Display
 const profile = document.querySelector('.profile.main.info');
 let profileMenu = document.querySelector('.profile.selection');
-
+// Status
 const statusSelection = document.querySelectorAll('input[type="radio"][name="status"]');
 const statusIndicator = document.querySelector('.profile.main.info')
-
+// Profile
 const profileSelection = document.querySelectorAll('input[type="radio"][name="profiles"]');
-const profileImage = document.querySelectorAll('.profile.image')
+const profileImage = document.querySelectorAll('.profile.image');
 
-const notificationClose = document.querySelector('.notification.message-close')
-
-const displayNone = document.querySelector('.notification.none')
+// Search Input
+const searchInput = document.querySelector('input#search');
+const cancelSearch = document.querySelector('.search-cancel')
 
 
 function removeNoneDisplay(e) {
@@ -59,7 +64,7 @@ function changeProfileImage(e) {
 
 function removeNotification(e) {
     e.target.parentElement.remove()
-    displayNone.style.removeProperty('display')
+    displayNoNotification.style.removeProperty('display')
     notification.classList.remove('notify')
 }
 
@@ -77,6 +82,17 @@ Array.from(profileSelection).forEach(profile => profile.addEventListener('change
 
 notificationClose.addEventListener('click', removeNotification)
 
+searchInput.addEventListener('input', (e) => {
 
+    if (e.target.value.length > 0) {
+        e.target.nextElementSibling.classList.add('show');
+    } else {
+        e.target.nextElementSibling.classList.remove('show');
+    }
+});
+
+cancelSearch.addEventListener('click', () => {
+    searchInput.value = '';
+})
 
 
