@@ -21,6 +21,11 @@ const searchInput = document.querySelector('input#search');
 const cancelSearch = document.querySelector('.search-cancel')
 const searchResultDialog = document.querySelector('.search-dialog')
 
+//Recents Addition
+const inputAlertDescription = document.querySelector('#alert-description')
+const alertLevelSelect = document.querySelector('#alert-level')
+const addAlertsRecents = document.querySelector('.add-recents')
+
 
 function removeNoneDisplay(e) {
     // console.log(e.target)
@@ -135,4 +140,20 @@ cancelSearch.addEventListener('click', () => {
     cancelSearch.classList.remove('show')
 })
 
+alertLevelSelect.addEventListener('change', () => {
 
+    alertLevelSelect.className = `${alertLevelSelect.value}-select`
+})
+
+addAlertsRecents.addEventListener('click', () => {
+
+    let alertObj = {
+        'sort': `${alertList.length}`,
+        'description': `${inputAlertDescription.value}`,
+        'level': `${alertLevelSelect.value}`
+    }
+
+    alertList.push(alertObj);
+
+    createRecentList(alertObj)
+})

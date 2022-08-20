@@ -46,8 +46,9 @@ let renderedAlertList = ''
 let recentBody = document.querySelector('.recents.body')
 let searchResultBody = document.querySelector('.results.body')
 
-function createRecentList() {
-    renderedAlertList = alertList.map(alert => {
+function createRecentList(list) {
+
+    function createDiv(alert) {
 
         let div = document.createElement('div');
         div.classList.add('recent');
@@ -67,11 +68,20 @@ function createRecentList() {
         div.appendChild(label)
 
         return div
-    });
+    }
 
-    renderedAlertList.forEach(element => {
-        recentBody.appendChild(element);
-    });
+    if (list.length > 1) {
+        renderedAlertList = list.map(createDiv);
+
+        renderedAlertList.forEach(element => {
+            recentBody.appendChild(element);
+        });
+    }
+    else {
+        element = createDiv(list)
+        renderedAlertList += element
+        recentBody.appendChild(element)
+    }
 }
 
 function renderSearchResult(searchResult) {
@@ -89,4 +99,4 @@ function renderSearchResult(searchResult) {
     })
 }
 
-createRecentList();
+createRecentList(alertList);

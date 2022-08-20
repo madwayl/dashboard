@@ -182,28 +182,24 @@
                 <img src="assets/web/icon-alerts/exclamation-solid.svg" alt="Alert Logo" class="alert count icon">
                 <p class="alert count number">123</p>
                 <p class="alert count text">Conflicting Information</p>
-                <!-- <img src="assets/web/icon-other/arrow-down-solid.svg" alt="" class="alert count arrow icon"> -->
             </div>
             <div class="alert overview in warning up">
                 <img src="assets/web/icon-alerts/triangle-exclamation-solid.svg" alt="Warning Logo"
                     class="alert warning icon">
                 <p class="alert warning number">50</p>
                 <p class="alert warning text">Vague Warnings</p>
-                <!-- <img src="assets/web/icon-other/arrow-up-solid.svg" alt="" class="alert warning arrow icon"> -->
             </div>
             <div class="alert overview in error down">
                 <img src="assets/web/icon-alerts/circle-exclamation-solid.svg" alt="error Logo"
                     class="alert error icon">
                 <p class="alert error number">34</p>
                 <p class="alert error text">Probable Errors</p>
-                <!-- <img src="assets/web/icon-other/arrow-up-solid.svg" alt="" class="alert error arrow icon"> -->
             </div>
             <div class="alert overview in critical up">
                 <img src="assets/web/icon-alerts/circle-xmark-solid.svg" alt="Critical Logo"
                     class="alert critical icon">
                 <p class="alert critical number">12</p>
                 <p class="alert critical text">Prompt Criticality</p>
-                <!-- <img src="assets/web/icon-other/arrow-down-solid.svg" alt="" class="alert critical arrow icon"> -->
             </div>
         </section>
 
@@ -270,10 +266,21 @@
 
             <section class="recents main">
                 <h3>Recent Alerts</h3>
+                <div class="recents element add">
+                    <input type="text" name="alert-description" id="alert-description" placeholder="Add Alert">
+                    <select name="alert-level" id="alert-level" class="info-select">
+                        <option value="info" selected>info</option>
+                        <option value="warning">warning</option>
+                        <option value="error">error</option>
+                        <option value="critical">critical</option>
+                    </select>
+                    <button type="submit" class="add-recents" el></button>
+                </div>
                 <section class="recents body">
                     <!-- Renders on JavaScript Dynamically -->
                     <div class="recent none" style="display: none;">Nothing to Display</div>
                 </section>
+
             </section>
 
             <!-- !SECTION -->

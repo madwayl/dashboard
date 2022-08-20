@@ -17,8 +17,8 @@
 
     --black: #151514;
 
-    --alert: #19df86;
-    --dark-alert: #106e27;
+    --info: #19df86;
+    --dark-info: #106e27;
 
     --warning: #F78812;
     --dark-warning: #663909;
@@ -908,7 +908,7 @@ section.alert {
 }
 
 .alert.overview.count {
-    background: linear-gradient(150deg, var(--alert), var(--dark-alert));
+    background: linear-gradient(150deg, var(--info), var(--dark-info));
     color: var(--white);
 
     overflow: hidden;
@@ -1052,7 +1052,7 @@ main.graph::after {
 .bar.count {
     position: absolute;
 
-    background: linear-gradient(130deg, var(--alert), var(--dark-alert));
+    background: linear-gradient(130deg, var(--info), var(--dark-info));
 }
 
 
@@ -1110,9 +1110,10 @@ section.recents.main {
 
 .recents {
     overflow-y: auto;
+    overflow-wrap: normal;
 }
 
-.recents>h3 {
+.recents.main>h3 {
     margin: 0 .5rem 0 0;
     padding: 1rem 0 1rem 1rem;
 
@@ -1142,6 +1143,150 @@ div.recent {
 
 }
 
+/* ANCHOR Recent Addition */
+
+.recents.element.add {
+    display: flex;
+    flex-flow: row no-wrap;
+    gap: .5rem;
+    justify-content: space-between;
+
+    position: sticky;
+
+    margin: 0 .5rem 0 0;
+    padding: 0 .5rem .5rem 1rem;
+
+    background-color: var(--light-gray);
+}
+
+.recents.element.add * {
+    font-family: 'Red Hat Display', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    background-color: var(--white);
+
+    border-radius: 5px;
+
+    height: 2.25rem;
+}
+
+.recents.element.add input {
+    flex: 1;
+
+    width: 1rem;
+
+    padding: 0 .8rem;
+    font-family: 'Red Hat Display', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    border: 1px solid var(--light-gray);
+
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px inset;
+}
+
+.recents.element.add input:focus-visible,
+.recents.element.add input:hover {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px inset;
+}
+
+.recents.element.add select {
+    text-align: center;
+
+    padding: 0 .5rem;
+
+    border: none;
+
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px inset;
+}
+
+.recents.element.add select:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px 0px inset;
+}
+
+.recents.element.add select.info-select {
+    background: var(--info);
+    color: var(--dark-info);
+}
+
+.recents.element.add select.warning-select {
+    background: var(--warning);
+    color: var(--dark-warning);
+}
+
+.recents.element.add select.error-select {
+    background: var(--error);
+    color: var(--gray);
+}
+
+.recents.element.add select.critical-select {
+    background: var(--critical);
+    color: var(--light-gray);
+}
+
+.recents.element.add select option {
+    text-align: center;
+
+    padding: 0 1rem;
+}
+
+.recents.element.add select:focus-visible {
+    outline: none;
+}
+
+.recents.element.add button {
+    width: 2.25rem;
+
+    border-radius: 50%;
+    border: none;
+
+    background: var(--light-gray) url(./assets/web/icon-other/plus-solid.svg) no-repeat center/50%;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px inset;
+}
+
+.recents.element.add button:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px 0px inset;
+
+}
+
+select#alert-level option[value="info"] {
+    background: var(--info);
+    color: var(--dark-info);
+}
+
+select#alert-level option[value="warning"] {
+    background-color: var(--warning);
+    color: var(--dark-warning);
+}
+
+select#alert-level option[value="error"] {
+    background-color: var(--error);
+    color: var(--gray);
+}
+
+select#alert-level option[value="critical"] {
+    background-color: var(--critical);
+    color: var(--light-gray);
+}
+
+select#alert-level option[value="info"]:hover {
+    background: var(--dark-info);
+}
+
+select#alert-level option[value="warning"]:hover {
+    background-color: var(--dark-warning);
+}
+
+select#alert-level option[value="error"]:hover {
+    background-color: var(--dark-error);
+}
+
+select#alert-level option[value="critical"]:hover {
+    background-color: var(--dark-critical);
+}
+
 /* ANCHOR Checkbox Styling */
 
 input[type="checkbox"] {
@@ -1165,8 +1310,8 @@ input[type="checkbox"]:checked+label {
     text-decoration: line-through;
 }
 
-input[type="checkbox"].alert-tag:checked {
-    background-color: var(--alert);
+input[type="checkbox"].info-tag:checked {
+    background-color: var(--info);
 }
 
 input[type="checkbox"].warning-tag:checked {
@@ -1195,8 +1340,8 @@ label.recent::after,
 
 label.recent.info-tag::after,
 .result.find.info-tag::after {
-    background-color: var(--alert);
-    color: var(--dark-alert);
+    background-color: var(--info);
+    color: var(--dark-info);
 }
 
 label.recent.warning-tag::after,
