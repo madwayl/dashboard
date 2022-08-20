@@ -265,6 +265,7 @@
 
             <section class="recents main">
                 <h3>Recent Alerts</h3>
+                <!-- ANCHOR Addition Menu -->
                 <div class="recents element add">
                     <input type="text" name="alert-description" id="alert-description" placeholder="Add Alert">
                     <select name="alert-level" id="alert-level" class="info-select">
@@ -273,7 +274,7 @@
                         <option value="error">error</option>
                         <option value="fatal">fatal</option>
                     </select>
-                    <button type="submit" class="add-recents" el></button>
+                    <button type="submit" class="add-recents"></button>
                 </div>
                 <section class="recents body">
                     <!-- Renders on JavaScript Dynamically -->
@@ -304,8 +305,8 @@
 
     <!-- !SECTION -->
 
-    <script src="./script.js"></script>
     <script src="./alerts.js"></script>
+    <script src="./script.js" async></script>
 
 </body>
 

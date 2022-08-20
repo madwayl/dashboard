@@ -56,6 +56,7 @@ function createRecentList(list) {
         let input = document.createElement('input');
         input.type = 'checkbox';
         input.setAttribute('id', alert.level + alert.sort);
+        input.setAttribute('data-sort', `${alert.sort}`)
         input.classList.add('recent', 'check', `${alert.level}-tag`);
 
         let label = document.createElement('label');

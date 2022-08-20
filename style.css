@@ -1139,8 +1139,14 @@ div.recent {
 }
 
 .recent.none {
-    width: 100%;
+    text-align: center;
+    padding: 1rem;
 
+    display: flex;
+
+    justify-content: center;
+
+    box-shadow: inset 0px 6px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
 /* ANCHOR Recent Addition */

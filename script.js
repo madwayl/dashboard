@@ -147,13 +147,50 @@ alertLevelSelect.addEventListener('change', () => {
 
 addAlertsRecents.addEventListener('click', () => {
 
+    if (inputAlertDescription.value.length === 0) return false
+    let sort = alertList.length
+
+    let alertListSort = []
+    for (let alert of alertList) {
+        alertListSort.push(parseInt(alert.sort))
+    }
+
+    while (alertListSort.includes(sort)) sort++
+
     let alertObj = {
-        'sort': `${alertList.length}`,
+        'sort': `${sort}`,
         'description': `${inputAlertDescription.value}`,
         'level': `${alertLevelSelect.value}`
     }
 
+    inputAlertDescription.value = '';
+
     alertList.push(alertObj);
 
-    createRecentList(alertObj)
-})
+    createRecentList(alertObj);
+
+    (document.querySelectorAll('input.recent.check')).forEach(checkbox => checkbox.addEventListener('input', (e) => {
+        console.log('Ran on Input Checkbox')
+        let sort = e.target.dataset.sort
+
+        e.target.parentElement.remove()
+
+        alertList.forEach((alert, index) => {
+            if (alert.sort == sort) alertList.splice(index, 1)
+        })
+
+    }));
+
+});
+
+(document.querySelectorAll('input.recent.check')).forEach(checkbox => checkbox.addEventListener('input', (e) => {
+    console.log('Ran on Input Checkbox')
+    let sort = e.target.dataset.sort
+
+    e.target.parentElement.remove()
+
+    alertList.forEach((alert, index) => {
+        if (alert.sort == sort) alertList.splice(index, 1)
+    })
+
+}));
