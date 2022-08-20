@@ -19,10 +19,11 @@ const profileImage = document.querySelectorAll('.profile.image');
 // Search Input
 const searchInput = document.querySelector('input#search');
 const cancelSearch = document.querySelector('.search-cancel')
+const searchResultDialog = document.querySelector('.search-dialog')
 
 
 function removeNoneDisplay(e) {
-    console.log(e.target)
+    // console.log(e.target)
     if (e.currentTarget === profile)
         profileMenu.style.removeProperty('display');
     else
@@ -84,15 +85,54 @@ notificationClose.addEventListener('click', removeNotification)
 
 searchInput.addEventListener('input', (e) => {
 
-    if (e.target.value.length > 0) {
+    const searchResultNone = document.querySelector('.results.body > .result.none')
+
+    let searchItem = e.target.value;
+
+    let searchResult = [];
+
+    if (searchItem.length > 0) {
         e.target.nextElementSibling.classList.add('show');
+
+        for (let alert of alertList) {
+            // console.log(alert.description)
+            if (alert.description.toLowerCase().includes(searchItem.toLowerCase()) || alert.level.includes(searchItem.toLowerCase())) {
+                searchResult.push(alert)
+            }
+        }
+
     } else {
         e.target.nextElementSibling.classList.remove('show');
     }
+
+    // console.log(alertList)
+
+    if (searchResult.length === 0) {
+        searchResultNone.style.removeProperty('display')
+    } else {
+        searchResultNone.style.setProperty('display', 'none')
+
+    }
+
+    renderSearchResult(searchResult)
 });
+
+
+const searchDialogBody = document.querySelector('a.result.find');
+
+searchInput.addEventListener('focus', () => {
+    searchResultDialog.style.removeProperty('display')
+    // console.log('focused Search')
+})
+
+searchInput.addEventListener('blur', () => {
+    searchResultDialog.style.setProperty('display', 'none')
+    // console.log('focused out Search')
+})
 
 cancelSearch.addEventListener('click', () => {
     searchInput.value = '';
+    cancelSearch.classList.remove('show')
 })
 
 

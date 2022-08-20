@@ -99,7 +99,11 @@ div.search {
     grid-area: search;
     align-self: center;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: .1fr 1fr .1fr;
+    grid-template-areas:
+        ". search cancel"
+        "dialog dialog dialog";
 
     min-width: 300px;
 
@@ -124,6 +128,7 @@ div.search::before {
 }
 
 #search {
+    grid-area: search;
     height: 3rem;
     min-width: max(10rem, 20px);
     margin: 1rem 0;
@@ -146,6 +151,7 @@ div.search::before {
 }
 
 span.search-cancel {
+    grid-area: cancel;
     height: 3rem;
     width: 4rem;
 
@@ -173,14 +179,72 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     opacity: 1;
 }
 
-/* ANCHOR Search Box Adjustments */
+/* ANCHOR Search Dialog Adjustments */
 
 .search-dialog {
-    position: absolute;
-    bottom: .5rem;
-    left: 2rem;
 
-    width: 95%;
+    position: fixed;
+    top: 59px;
+    left: 110px;
+
+    min-width: max-content;
+
+    padding: .5rem 1rem 1rem;
+
+    background-color: var(--light-gray);
+
+    display: grid;
+
+    z-index: 1;
+    transition: .5s;
+
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+
+div.search:focus-within::before {
+    border-bottom-left-radius: 0rem;
+}
+
+div.search:focus-within::before,
+div.search:has(a:active)::before {
+    border-bottom-left-radius: 0rem;
+}
+
+/* #search:focus+.search-cancel {
+    border-bottom-right-radius: 0rem;
+} */
+
+.search-dialog .results.head {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.search-dialog .results.body {
+    font-weight: 500;
+    font-size: .8rem;
+
+    padding-top: .5rem;
+}
+
+.results.body .result.none {
+    opacity: .7;
+}
+
+div.result.find {
+    padding: .5rem 0;
+
+    color: gray;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+div.result.find:hover {
+    color: var(--black)
 }
 
 /* ANCHOR Notification Bell */
@@ -528,7 +592,7 @@ img.profile.main {
 }
 
 button.icon {
-    width: 4rem;
+    width: 4.5rem;
 
     box-sizing: border-box;
 
@@ -547,8 +611,8 @@ button.icon {
 }
 
 img.header.icon {
-    height: 1.1rem;
-    width: 1.1rem;
+    height: 1.25rem;
+    width: 1.25rem;
 
     padding: .2rem;
 }
@@ -750,6 +814,7 @@ section.alert {
 
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
 
 .alert.overview {
     display: grid;
@@ -1117,8 +1182,9 @@ input[type="checkbox"].critical-tag:checked {
 }
 
 
-/* ANCHOR Recents Tags  */
-label.recent::after {
+/* ANCHOR Recents Tags + Results Tags */
+label.recent::after,
+.result.find::after {
     content: attr(data-type);
     font-size: .65rem;
 
@@ -1127,25 +1193,29 @@ label.recent::after {
     padding: .2rem .6rem;
 }
 
-label.recent.alert-tag::after {
+label.recent.info-tag::after,
+.result.find.info-tag::after {
     background-color: var(--alert);
     color: var(--dark-alert);
 }
 
-label.recent.warning-tag::after {
+label.recent.warning-tag::after,
+.result.find.warning-tag::after {
     background-color: var(--warning);
     color: var(--dark-warning);
 }
 
-label.recent.error-tag::after {
+label.recent.error-tag::after,
+.result.find.error-tag::after {
     background-color: var(--error);
     color: var(--gray);
 
 }
 
-label.recent.critical-tag::after {
+label.recent.critical-tag::after,
+.result.find.critical-tag::after {
     background-color: var(--critical);
-    color: var(--bright-red);
+    color: var(--light-gray);
 }
 
 /* !SECTION */
