@@ -178,10 +178,10 @@
         <!-- SECTION Alert -->
 
         <section class="article high alert">
-            <div class="alert overview in count down">
-                <img src="assets/web/icon-alerts/exclamation-solid.svg" alt="Alert Logo" class="alert count icon">
-                <p class="alert count number">123</p>
-                <p class="alert count text">Conflicting Information</p>
+            <div class="alert overview in info down">
+                <img src="assets/web/icon-alerts/exclamation-solid.svg" alt="Alert Logo" class="alert info icon">
+                <p class="alert info number">123</p>
+                <p class="alert info text">Conflicting Information</p>
             </div>
             <div class="alert overview in warning up">
                 <img src="assets/web/icon-alerts/triangle-exclamation-solid.svg" alt="Warning Logo"
@@ -195,11 +195,10 @@
                 <p class="alert error number">34</p>
                 <p class="alert error text">Probable Errors</p>
             </div>
-            <div class="alert overview in critical up">
-                <img src="assets/web/icon-alerts/circle-xmark-solid.svg" alt="Critical Logo"
-                    class="alert critical icon">
-                <p class="alert critical number">12</p>
-                <p class="alert critical text">Prompt Criticality</p>
+            <div class="alert overview in fatal up">
+                <img src="assets/web/icon-alerts/circle-xmark-solid.svg" alt="Critical Logo" class="alert fatal icon">
+                <p class="alert fatal number">12</p>
+                <p class="alert fatal text">Potentially Fatal</p>
             </div>
         </section>
 
@@ -216,45 +215,45 @@
             <section class="graph">
                 <main class="graph">
                     <div class="bars" id="bar1">
-                        <div class="bar count" id="o1" style="height: 65%"></div>
+                        <div class="bar info" id="o1" style="height: 65%"></div>
                         <div class="bar warning" id="w1" style="height: 45%"></div>
                         <div class="bar error" id="e1" style="height: 25%"></div>
-                        <div class="bar critical" id="c1" style="height: 23%"></div>
+                        <div class="bar fatal" id="c1" style="height: 23%"></div>
                         <p class="bar name">March</p>
                     </div>
                     <div class="bars" id="bar2">
-                        <div class="bar count" id="o2" style="height: 43%"></div>
+                        <div class="bar info" id="o2" style="height: 43%"></div>
                         <div class="bar warning" id="w2" style="height: 23%"></div>
                         <div class="bar error" id="e2" style="height: 18%"></div>
-                        <div class="bar critical" id="c2" style="height: 15%"></div>
+                        <div class="bar fatal" id="c2" style="height: 15%"></div>
                         <p class="bar name">April</p>
                     </div>
                     <div class="bars" id="bar3">
-                        <div class="bar count" id="o3" style="height: 45%"></div>
+                        <div class="bar info" id="o3" style="height: 45%"></div>
                         <div class="bar warning" id="w3" style="height: 34%"></div>
                         <div class="bar error" id="e3" style="height: 12%"></div>
-                        <div class="bar critical" id="c3" style="height: 9%"></div>
+                        <div class="bar fatal" id="c3" style="height: 9%"></div>
                         <p class="bar name">May</p>
                     </div>
                     <div class="bars" id="bar4">
-                        <div class="bar count" id="o4" style="height: 90%"></div>
+                        <div class="bar info" id="o4" style="height: 90%"></div>
                         <div class="bar warning" id="w4" style="height: 55%"></div>
                         <div class="bar error" id="e4" style="height: 55%"></div>
-                        <div class="bar critical" id="c4" style="height: 45%"></div>
+                        <div class="bar fatal" id="c4" style="height: 45%"></div>
                         <p class="bar name">June</p>
                     </div>
                     <div class="bars" id="bar5">
-                        <div class="bar count" id="o5" style="height: 70%"></div>
+                        <div class="bar info" id="o5" style="height: 70%"></div>
                         <div class="bar warning" id="w5" style="height: 65%"></div>
                         <div class="bar error" id="e5" style="height: 25%"></div>
-                        <div class="bar critical" id="c5" style="height: 25%"></div>
+                        <div class="bar fatal" id="c5" style="height: 25%"></div>
                         <p class="bar name">July</p>
                     </div>
                     <div class="bars" id="bar6">
-                        <div class="bar count" id="o6" style="height: 90%"></div>
+                        <div class="bar info" id="o6" style="height: 90%"></div>
                         <div class="bar warning" id="w6" style="height: 34%"></div>
                         <div class="bar error" id="e6" style="height: 25%"></div>
-                        <div class="bar critical" id="c6" style="height: 11%"></div>
+                        <div class="bar fatal" id="c6" style="height: 11%"></div>
                         <p class="bar name">August</p>
                     </div>
                 </main>
@@ -272,7 +271,7 @@
                         <option value="info" selected>info</option>
                         <option value="warning">warning</option>
                         <option value="error">error</option>
-                        <option value="critical">critical</option>
+                        <option value="fatal">fatal</option>
                     </select>
                     <button type="submit" class="add-recents" el></button>
                 </div>

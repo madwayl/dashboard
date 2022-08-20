@@ -907,7 +907,7 @@ section.alert {
     filter: invert(48%) sepia(79%) saturate(9312%) hue-rotate(360deg);
 }
 
-.alert.overview.count {
+.alert.overview.info {
     background: linear-gradient(150deg, var(--info), var(--dark-info));
     color: var(--white);
 
@@ -928,7 +928,7 @@ section.alert {
     overflow: hidden;
 }
 
-.alert.overview.critical {
+.alert.overview.fatal {
     background: linear-gradient(150deg, var(--critical), var(--dark-critical));
     color: var(--white);
 
@@ -1049,7 +1049,7 @@ main.graph::after {
     width: max(20px, 5rem);
 }
 
-.bar.count {
+.bar.info {
     position: absolute;
 
     background: linear-gradient(130deg, var(--info), var(--dark-info));
@@ -1074,7 +1074,7 @@ main.graph::after {
 
 }
 
-.bar.critical {
+.bar.fatal {
     z-index: 5;
 
     position: absolute;
@@ -1220,7 +1220,7 @@ div.recent {
     color: var(--gray);
 }
 
-.recents.element.add select.critical-select {
+.recents.element.add select.fatal-select {
     background: var(--critical);
     color: var(--light-gray);
 }
@@ -1266,25 +1266,9 @@ select#alert-level option[value="error"] {
     color: var(--gray);
 }
 
-select#alert-level option[value="critical"] {
+select#alert-level option[value="fatal"] {
     background-color: var(--critical);
     color: var(--light-gray);
-}
-
-select#alert-level option[value="info"]:hover {
-    background: var(--dark-info);
-}
-
-select#alert-level option[value="warning"]:hover {
-    background-color: var(--dark-warning);
-}
-
-select#alert-level option[value="error"]:hover {
-    background-color: var(--dark-error);
-}
-
-select#alert-level option[value="critical"]:hover {
-    background-color: var(--dark-critical);
 }
 
 /* ANCHOR Checkbox Styling */
@@ -1322,7 +1306,7 @@ input[type="checkbox"].error-tag:checked {
     background-color: var(--error);
 }
 
-input[type="checkbox"].critical-tag:checked {
+input[type="checkbox"].fatal-tag:checked {
     background-color: var(--critical);
 }
 
@@ -1357,8 +1341,8 @@ label.recent.error-tag::after,
 
 }
 
-label.recent.critical-tag::after,
-.result.find.critical-tag::after {
+label.recent.fatal-tag::after,
+.result.find.fatal-tag::after {
     background-color: var(--critical);
     color: var(--light-gray);
 }

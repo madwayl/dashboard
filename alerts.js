@@ -37,7 +37,7 @@ let alertList = [
     {
         'sort': '7',
         'description': 'Critical Error on Server',
-        'level': 'critical'
+        'level': 'fatal'
     }
 ]
 
