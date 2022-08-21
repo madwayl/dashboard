@@ -275,7 +275,7 @@ div.month.select {
     position: relative
 }
 
-input#month {
+input[type="month"]#month {
     height: 2.95rem;
 
     font-family: 'Red Hat Display', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
