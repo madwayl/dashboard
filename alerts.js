@@ -6,7 +6,7 @@ let alertList = [
     },
     {
         'sort': '1',
-        'description': 'Unkown User Login without Verification',
+        'description': 'Login without Verification',
         'level': 'warning'
     },
     {

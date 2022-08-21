@@ -26,6 +26,8 @@ const inputAlertDescription = document.querySelector('#alert-description')
 const alertLevelSelect = document.querySelector('#alert-level')
 const addAlertsRecents = document.querySelector('.add-recents')
 
+let timeout = false;
+
 
 function removeNoneDisplay(e) {
     // console.log(e.target)
@@ -75,13 +77,16 @@ function removeNotification(e) {
 }
 
 function removeElementOnInputEvent() {
+
+    clearTimeout(timeout);
+
     (document.querySelectorAll('input.recent.check')).forEach(checkbox => checkbox.addEventListener('input', (e) => {
 
         // console.log('Ran on Input Checkbox')
 
         let sort = e.target.dataset.sort
 
-        e.target.parentElement.remove()
+        timeout = setTimeout(() => e.target.parentElement.remove(), 1000)
 
         alertList.forEach((alert, index) => {
             if (alert.sort == sort) alertList.splice(index, 1)
