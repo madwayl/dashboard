@@ -6,11 +6,12 @@ A Dashboard Lookup as Instructed From Odin Project
 - Notification View (interactive*)
 - Expand Navigaiton on Hover
 - Search Working
+- Remove on Check for Recent Alerts
 
 ### Fixed
 1. With pseudo elements
-    - Best Viewed at WebKit Browsers
-        - Edited Webkit Code for Input Search
+    - Fixes :
+        - Without Edits in Webkit Code for Input Search
         - Couln't modify search bar with Mozilla FireFox `-moz` commands**
 
 ### Errors

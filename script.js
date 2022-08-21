@@ -80,19 +80,28 @@ function removeElementOnInputEvent() {
 
     clearTimeout(timeout);
 
-    (document.querySelectorAll('input.recent.check')).forEach(checkbox => checkbox.addEventListener('input', (e) => {
+    let inputRecentCheck = document.querySelectorAll('input.recent.check');
+
+    (inputRecentCheck).forEach(checkbox => checkbox.addEventListener('input', (e) => {
 
         // console.log('Ran on Input Checkbox')
 
         let sort = e.target.dataset.sort
 
-        timeout = setTimeout(() => e.target.parentElement.remove(), 1000)
+        timeout = setTimeout(() => e.target.parentElement.remove(), 500)
 
         alertList.forEach((alert, index) => {
             if (alert.sort == sort) alertList.splice(index, 1)
         })
 
+        if (alertList.length == 0) {
+            console.log('noted')
+
+            document.querySelector('.recent.none').style.removeProperty('display');
+        }
+
     }));
+
 }
 
 profile.addEventListener('click', removeNoneDisplay);
