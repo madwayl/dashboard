@@ -43,12 +43,10 @@ function generateGraphPercentage() {
                 }
             }
 
-
-
-
         }
 
     }
 
 }
 
+generateGraphPercentage();

@@ -291,6 +291,8 @@ input#month {
     border: none;
 
     background-color: var(--light-gray);
+
+    cursor: pointer;
 }
 
 /* ANCHOR Notification Bell */
