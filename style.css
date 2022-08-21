@@ -265,6 +265,34 @@ div.result.find:hover {
     color: var(--black)
 }
 
+/* ANCHOR Month Selection */
+div.month.select {
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    position: relative
+}
+
+input#month {
+    height: 2.95rem;
+
+    font-family: 'Red Hat Display', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+
+    appearance: none;
+
+    border-radius: .5rem;
+    padding-left: .8rem;
+    margin: auto 1rem;
+
+    outline: none;
+    border: none;
+
+    background-color: var(--light-gray);
+}
+
 /* ANCHOR Notification Bell */
 
 div.notification.menu {
@@ -325,12 +353,11 @@ div.notification.selection {
 
     height: 1rem;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .notification.body {
     background-color: var(--white);
-    opacity: .8;
 
     min-height: 10%;
     margin: 0 0 1rem;
@@ -369,7 +396,8 @@ div.notification.none {
     text-align: center;
     padding: 1rem 0;
 
-    font-size: .9rem;
+    font-size: .8rem;
+    font-weight: 600;
     opacity: .5;
 
     box-shadow: inset 0px 6px 10px -5px rgba(0, 0, 0, 0.1);
@@ -1162,7 +1190,10 @@ div.recent {
 
     justify-content: center;
 
-    box-shadow: inset 0px 6px 10px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 2px 7px -5px rgba(0, 0, 0, 0.1);
+
+    font-weight: 600;
+    opacity: .6;
 }
 
 /* ANCHOR Recent Addition */

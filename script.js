@@ -88,17 +88,20 @@ function removeElementOnInputEvent() {
 
         let sort = e.target.dataset.sort
 
-        timeout = setTimeout(() => e.target.parentElement.remove(), 500)
+        timeout = setTimeout(() => {
+            e.target.parentElement.remove()
 
-        alertList.forEach((alert, index) => {
-            if (alert.sort == sort) alertList.splice(index, 1)
-        })
+            alertList.forEach((alert, index) => {
+                if (alert.sort == sort) alertList.splice(index, 1)
+            })
 
-        if (alertList.length == 0) {
-            console.log('noted')
+            if (alertList.length == 0) {
+                console.log('noted')
 
-            document.querySelector('.recent.none').style.removeProperty('display');
-        }
+                document.querySelector('.recent.none').style.removeProperty('display');
+            }
+
+        }, 500)
 
     }));
 
