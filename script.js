@@ -74,6 +74,22 @@ function removeNotification(e) {
     notification.classList.remove('notify')
 }
 
+function removeElementOnInputEvent() {
+    (document.querySelectorAll('input.recent.check')).forEach(checkbox => checkbox.addEventListener('input', (e) => {
+
+        // console.log('Ran on Input Checkbox')
+
+        let sort = e.target.dataset.sort
+
+        e.target.parentElement.remove()
+
+        alertList.forEach((alert, index) => {
+            if (alert.sort == sort) alertList.splice(index, 1)
+        })
+
+    }));
+}
+
 profile.addEventListener('click', removeNoneDisplay);
 
 notification.addEventListener('click', removeNoneDisplay);
@@ -169,28 +185,8 @@ addAlertsRecents.addEventListener('click', () => {
 
     createRecentList(alertObj);
 
-    (document.querySelectorAll('input.recent.check')).forEach(checkbox => checkbox.addEventListener('input', (e) => {
-        console.log('Ran on Input Checkbox')
-        let sort = e.target.dataset.sort
-
-        e.target.parentElement.remove()
-
-        alertList.forEach((alert, index) => {
-            if (alert.sort == sort) alertList.splice(index, 1)
-        })
-
-    }));
+    removeElementOnInputEvent();
 
 });
 
-(document.querySelectorAll('input.recent.check')).forEach(checkbox => checkbox.addEventListener('input', (e) => {
-    console.log('Ran on Input Checkbox')
-    let sort = e.target.dataset.sort
-
-    e.target.parentElement.remove()
-
-    alertList.forEach((alert, index) => {
-        if (alert.sort == sort) alertList.splice(index, 1)
-    })
-
-}));
+removeElementOnInputEvent();
