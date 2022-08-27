@@ -5,6 +5,8 @@ const notificationMenu = document.querySelector('.notification.selection');
 const notificationClose = document.querySelector('.notification.message-close')
 // Display None Notification
 const displayNoNotification = document.querySelector('.notification.none')
+//Notification Icon
+const notificationIcon = document.querySelector('.notification.icon')
 
 // Profile Menu Display
 const profile = document.querySelector('.profile.main.info');
@@ -15,6 +17,10 @@ const statusIndicator = document.querySelector('.profile.main.info')
 // Profile
 const profileSelection = document.querySelectorAll('input[type="radio"][name="profiles"]');
 const profileImage = document.querySelectorAll('.profile.image');
+//Profile Click Setup
+const profileImageSide = document.querySelector('.profile.image.side')
+const profileText = document.querySelector('.profile.name')
+
 
 // Search Input
 const searchInput = document.querySelector('input#search');
@@ -30,11 +36,31 @@ let timeout = false;
 
 
 function removeNoneDisplay(e) {
-    // console.log(e.target)
-    if (e.currentTarget === profile)
+
+    if (e.currentTarget === profile) {
         profileMenu.style.removeProperty('display');
-    else
+
+        document.addEventListener('click', (e) => {
+
+            if (!e.target.closest('.profile.selection') &&
+                !(e.target === profileImageSide || e.target === profileText || e.target === profile))
+                profileMenu.style.setProperty('display', 'none')
+
+        })
+
+    }
+    else {
         notificationMenu.style.removeProperty('display');
+
+        document.addEventListener('click', (e) => {
+
+            if (!e.target.closest('.notification.selection') &&
+                !(e.target === notificationIcon || e.target === notification))
+                notificationMenu.style.setProperty('display', 'none')
+        })
+
+    }
+
 }
 
 function addNoneDisplay(e) {
@@ -202,6 +228,7 @@ addAlertsRecents.addEventListener('click', () => {
 
     createRecentList(alertObj);
 
+    // rendering elements again, removes events, thus adding again.
     removeElementOnInputEvent();
 
 });
