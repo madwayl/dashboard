@@ -102,6 +102,8 @@ function removeNotification(e) {
     notification.classList.remove('notify')
 }
 
+//TODO - Re-check to add event listener on element
+
 function removeElementOnInputEvent() {
 
     clearTimeout(timeout);
@@ -112,13 +114,12 @@ function removeElementOnInputEvent() {
 
         // console.log('Ran on Input Checkbox')
 
-        let sort = e.target.dataset.sort
-
         timeout = setTimeout(() => {
             e.target.parentElement.remove()
 
             alertList.forEach((alert, index) => {
-                if (alert.sort == sort) alertList.splice(index, 1)
+                if (alert.sort == e.target.dataset.sort)
+                    alertList.splice(index, 1)
             })
 
             if (alertList.length == 0) {
@@ -209,6 +210,7 @@ addAlertsRecents.addEventListener('click', () => {
     if (inputAlertDescription.value.length === 0) return false
     let sort = alertList.length
 
+    // Account for missing in-between sorts too
     let alertListSort = []
     for (let alert of alertList) {
         alertListSort.push(parseInt(alert.sort))

@@ -41,12 +41,20 @@ let alertList = [
     }
 ]
 
-let renderedAlertList = ''
+// let renderedAlertList;
 
 let recentBody = document.querySelector('.recents.body')
 let searchResultBody = document.querySelector('.results.body')
 
 function createRecentList(list) {
+
+    if (alertList.length) {
+        document.querySelector('.recent.none').style.setProperty('display', 'none');
+    } else {
+        document.querySelector('.recent.none').style.removeProperty('display');
+    }
+
+    if (!alertList.length) return
 
     function createDiv(alert) {
 
@@ -71,18 +79,16 @@ function createRecentList(list) {
         return div
     }
 
-    if (list.length > 1) {
-        renderedAlertList = list.map(createDiv);
+    if (list.length) {
 
-        renderedAlertList.forEach(element => {
+        list.map(createDiv).forEach(element => {
             recentBody.appendChild(element);
         });
+
+    } else {
+        recentBody.appendChild(createDiv(list))
     }
-    else {
-        element = createDiv(list)
-        renderedAlertList += element
-        recentBody.appendChild(element)
-    }
+
 }
 
 function renderSearchResult(searchResult) {
