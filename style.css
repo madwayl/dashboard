@@ -6,7 +6,6 @@
 
 :root {
     font-family: 'Red Hat Display', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
     font-size: clamp(15px, 2rem, 1vw);
 
     --white: #F9F6F7;
@@ -38,6 +37,7 @@
     --dark-red: #2D132C;
 
     --bright-yellow: #ffdf52;
+    height: 100vh;
 }
 
 /* ANCHOR Scroll Bar */
@@ -61,9 +61,7 @@
 body {
     margin: 0;
     height: 100vh;
-
     color: var(--black);
-
     display: grid;
     grid-template-columns: minmax(80px, 5vw) 2fr 2fr;
     grid-template-areas:
@@ -72,8 +70,8 @@ body {
         "nav main main"
         "nav main main"
         "nav footer footer";
-
     background-color: var(--white);
+    position: relative;
 }
 
 img.icon {
@@ -105,7 +103,7 @@ header {
 
 header section.top {
     display: grid;
-    grid-template-columns: repeat(2, 2fr) 1fr 1fr .25fr 1fr;
+    /* grid-template-columns: repeat(2, 2fr) 1fr 1fr .25fr 1fr; */
     grid-template-areas:
         "search search . . notification profile";
     gap: 1rem
@@ -1024,25 +1022,27 @@ section.article.low.gr {
 
 section.graph {
     /* padding: 1rem; */
-    min-height: 280px;
-    /* min-height: 100px; */
+    min-height: 20vh;
+    overflow: auto;
     min-width: 62vw;
-
     flex: 2 0 calc(100vw*2/3);
+    display: flex;
+    flex-direction: column;
+    min-width: max-content;
+    overflow-x: scroll;
+    /* width: 12300px; */
 }
 
 main.graph {
     height: 100%;
-
     /* display: flex;
     gap: 2rem;
     justify-content: center; */
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
     gap: 1rem;
-
     position: relative;
+    /* max-width: 205vh; */
 }
 
 /* ANCHOR Graph Bottom Line */
