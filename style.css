@@ -102,11 +102,14 @@ header {
 /* SECTION Top Header */
 
 header section.top {
-    display: grid;
+    display: flex;
     /* grid-template-columns: repeat(2, 2fr) 1fr 1fr .25fr 1fr; */
     grid-template-areas:
         "search search . . notification profile";
-    gap: 1rem
+    gap: .8rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 1.5rem 1rem;
 }
 
 /* ANCHOR Search Adjustments */
@@ -114,32 +117,27 @@ header section.top {
 div.search {
     grid-area: search;
     align-self: center;
-
     display: grid;
     grid-template-columns: .1fr 1fr .1fr;
     grid-template-areas:
         ". search cancel"
         "dialog dialog dialog";
-
     min-width: 300px;
-
     position: relative;
+    flex: 2;
+    max-width: 48vw;
 }
 
 div.search::before {
     content: '';
-
     height: 3rem;
     width: 4rem;
     min-width: 2rem;
-    margin: 1rem 0 1rem 1rem;
-
+    margin: 1rem 0 0;
     position: relative;
     left: 1rem;
-
     border-top-left-radius: .5rem;
     border-bottom-left-radius: .5rem;
-
     background: var(--light-gray) no-repeat center / 1.2rem url(./assets/web/icon-other/magnifying-glass-solid.svg);
 }
 
@@ -147,18 +145,13 @@ div.search::before {
     grid-area: search;
     height: 3rem;
     min-width: max(10rem, 20px);
-    margin: 1rem 0;
+    margin: 1rem 0 0;
     padding-left: 1.2rem;
-
     border: none;
-
     font-family: 'Red Hat Display', sans-serif;
-
     flex: 1;
     background-color: var(--light-gray);
-
     transition: .3s;
-
     z-index: 2;
 }
 
@@ -170,12 +163,9 @@ span.search-cancel {
     grid-area: cancel;
     height: 3rem;
     width: 4rem;
-
-    margin: 1rem 0;
-
+    margin: 1rem 1rem 0rem 0rem;
     border-top-right-radius: .5rem;
     border-bottom-right-radius: .5rem;
-
     background: var(--light-gray);
 }
 
@@ -299,16 +289,13 @@ div.notification.menu {
     grid-area: notification;
     align-self: center;
     justify-self: center;
-
     display: flex;
     align-items: center;
-
     border-radius: 50%;
     border: .2rem solid var(--light-gray);
-
     position: relative;
-
     cursor: pointer;
+    margin-left: auto;
 }
 
 div.notification.menu:hover {
@@ -408,34 +395,26 @@ div.notification.none {
 .profile.main {
     grid-area: profile;
     justify-self: end;
-
     text-align: center;
-
     width: max-content;
-    margin: 0 1.5rem 0 .25rem;
-
+    margin: 0 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .25rem;
-
     cursor: pointer;
-
     position: relative;
-
     transition: .2s;
+    align-self: flex-end;
 }
 
 .profile.main::after {
     content: ' ';
-
     position: absolute;
-    left: 4.2%;
-
-    width: 25%;
-    height: 45%;
+    left: 2%;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
-
     z-index: 6;
 }
 
@@ -618,7 +597,7 @@ img.profile.main {
 
 .greeting>h1 {
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.69rem;
     margin-bottom: .5rem;
     width: max-content;
 }
@@ -1016,21 +995,19 @@ section.article.low.gr {
     margin: .7rem;
     align-items: stretch;
     align-content: stretch;
+    /* overflow-y: hidden; */
 }
 
 /* SECTION Graph */
 
 section.graph {
-    /* padding: 1rem; */
+    padding: 1rem;
     min-height: 20vh;
-    overflow: auto;
-    min-width: 62vw;
     flex: 2 0 calc(100vw*2/3);
     display: flex;
     flex-direction: column;
-    min-width: max-content;
-    overflow-x: scroll;
-    /* width: 12300px; */
+    overflow-y: auto;
+    /* justify-content: flex-start; */
 }
 
 main.graph {
@@ -1040,9 +1017,9 @@ main.graph {
     justify-content: center; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
-    gap: 1rem;
+    gap: 2rem;
     position: relative;
-    /* max-width: 205vh; */
+    min-width: 40rem;
 }
 
 /* ANCHOR Graph Bottom Line */
@@ -1130,7 +1107,7 @@ main.graph::after {
 /* SECTION Recents */
 
 section.recents.main {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     max-height: 40vh;
     font-size: .9rem;
     background-color: var(--light-gray);
@@ -1146,9 +1123,8 @@ section.recents.main {
     display: flex;
     flex-flow: column wrap;
     gap: .2rem;
-
     overflow-y: auto;
-
+    padding-top: .5rem;
 }
 
 .recents.main>h3 {
